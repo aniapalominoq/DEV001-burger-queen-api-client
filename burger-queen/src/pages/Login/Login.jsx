@@ -40,6 +40,7 @@ const Login = () => {
         Login
       </Button>
     </Form> */
+    <section className="container">
     <form className="container-form" onSubmit={enviarDatos}>
       <h1 className="form-title">
         Burguer Queen
@@ -48,37 +49,38 @@ const Login = () => {
         <label class="label">
           Email
         </label>
-      <p className="control has-icons-left has-icons-right">
-        <input className="input" type="email" placeholder="Email"  name='Email' onChange={handleInputChange}/>
-        <span className="icon is-small is-left">
-          <i className="fas fa-envelope"></i>
-        </span>
-        <span className="icon is-small is-right">
-          <i className="fas fa-check"></i>
-        </span>
-      </p>
-      </div>
-      <div class="field">
+        <p className="control has-icons-left has-icons-right">
+          <input className="input" type="email" placeholder="Email"  name='Email' onChange={handleInputChange}/>
+          <span className="icon is-small is-left">
+            <i className="fas fa-envelope"></i>
+          </span>
+          <span className="icon is-small is-right">
+            <i className="fas fa-check"></i>
+          </span>
+        </p>
+        </div>
+        <div class="field">
         <label class="label">
-          Password
+          Email
         </label>
-    <p className="control has-icons-left">
-      <input className="input" type="password" placeholder="Password"  name='Password' onChange={handleInputChange}/>
-      <span className="icon is-small is-left">
-        <i className="fas fa-lock"></i>
-      </span>
-      </p>
+        <p className="control has-icons-left has-icons-right">
+          <input className="input" type="password" placeholder="Password"  name='Password' onChange={handleInputChange}/>
+          <span className="icon is-small is-left">
+            <i className="fas fa-lock"></i>
+          </span>
+          <span className="icon is-small is-right">
+            <i className="fas fa-eye"></i>
+          </span>
+        </p>
       </div>
-      <div class="field is-grouped">
-    <div class="control">
-    <button class="button is-link" type="submit">Sign In</button>
-    </div>
-    <div class="control">
-    <button class="button is-link is-light" type="reset">Reset</button>
-    </div>
-    </div>
+      <div class="btn-control">
+        <button class="button " type="submit">
+          Sign In
+        </button>
+      </div>
       
-</form>
+      </form>
+      </section>
     
   )
 }
