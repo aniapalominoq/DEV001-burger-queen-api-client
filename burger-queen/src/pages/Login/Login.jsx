@@ -1,9 +1,21 @@
-import React, {useState} from "react";
-import './Login.css';
+import { useForm } from "../../hooks/useForm";
+import "./Login.css";
+
+const initialForm = {};
+const validationForm = () => {};
 
 const Login = () => {
+  const {
+    form,
+    error,
+    loading,
+    response,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+  } = useForm(initialForm, validationForm);
 
-    const [datos, setDatos] = useState({
+  /*  const [datos, setDatos] = useState({
       Email:'',
       Password: '',
     });
@@ -16,7 +28,7 @@ const Login = () => {
     }
     const enviarDatos = (event) => {
       event.preventDefault();
-    }
+    } */
   return (
     /*
     <Form className="container-form" onSubmit={enviarDatos}>
@@ -41,47 +53,55 @@ const Login = () => {
       </Button>
     </Form> */
     <section className="container">
-    <form className="container-form" onSubmit={enviarDatos}>
-      <h1 className="form-title">
-        Burguer Queen
-      </h1>
-      <div class="field">
-        <label class="label">
-          Email
-        </label>
-        <p className="control has-icons-left has-icons-right">
-          <input className="input" type="email" placeholder="Email"  name='Email' onChange={handleInputChange}/>
-          <span className="icon is-small is-left">
-            <i className="fas fa-envelope"></i>
-          </span>
-          <span className="icon is-small is-right">
-            <i className="fas fa-check"></i>
-          </span>
-        </p>
+      <form className="container-form" onSubmit={handleSubmit}>
+        <h1 className="form-title">Burguer Queen</h1>
+        <div class="field">
+          <label class="label">Email</label>
+          <p className="control has-icons-left has-icons-right">
+            <input
+              className="input"
+              type="email"
+              placeholder="Email"
+              name="email"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={form.email}
+              required
+            />
+            <span className="icon is-small is-left">
+              <i className="fas fa-envelope"></i>
+            </span>
+            <span className="icon is-small is-right">
+              <i className="fas fa-check"></i>
+            </span>
+          </p>
         </div>
         <div class="field">
-        <label class="label">
-          Email
-        </label>
-        <p className="control has-icons-left has-icons-right">
-          <input className="input" type="password" placeholder="Password"  name='Password' onChange={handleInputChange}/>
-          <span className="icon is-small is-left">
-            <i className="fas fa-lock"></i>
-          </span>
-          <span className="icon is-small is-right">
-            <i className="fas fa-eye"></i>
-          </span>
-        </p>
-      </div>
-      <div class="btn-control">
-        <button class="button " type="submit">
-          Sign In
-        </button>
-      </div>
-      
+          <label class="label">Email</label>
+          <p className="control has-icons-left has-icons-right">
+            <input
+              className="input"
+              type="password"
+              placeholder="Password"
+              name="password"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={form.password}
+              required
+            />
+            <span className="icon is-small is-left">
+              <i className="fas fa-lock"></i>
+            </span>
+            <span className="icon is-small is-right">
+              <i className="fas fa-eye"></i>
+            </span>
+          </p>
+        </div>
+        <div class="btn-control">
+          <input class="button" type="submit" value="Sign In" />
+        </div>
       </form>
-      </section>
-    
-  )
-}
-export default Login
+    </section>
+  );
+};
+export default Login;
