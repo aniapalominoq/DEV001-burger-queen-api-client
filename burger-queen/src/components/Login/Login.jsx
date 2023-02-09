@@ -1,7 +1,5 @@
 import React, {useState} from "react";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './Login.css';
 
 const Login = () => {
 
@@ -20,7 +18,7 @@ const Login = () => {
       event.preventDefault();
     }
   return (
-    
+    /*
     <Form className="container-form" onSubmit={enviarDatos}>
         <h1 className="form-title"> Burguer Queen</h1>
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -41,9 +39,47 @@ const Login = () => {
       <Button variant="primary" type="submit">
         Login
       </Button>
-      </Form>
+    </Form> */
+    <form className="container-form" onSubmit={enviarDatos}>
+      <h1 className="form-title">
+        Burguer Queen
+      </h1>
+      <div class="field">
+        <label class="label">
+          Email
+        </label>
+      <p className="control has-icons-left has-icons-right">
+        <input className="input" type="email" placeholder="Email"  name='Email' onChange={handleInputChange}/>
+        <span className="icon is-small is-left">
+          <i className="fas fa-envelope"></i>
+        </span>
+        <span className="icon is-small is-right">
+          <i className="fas fa-check"></i>
+        </span>
+      </p>
+      </div>
+      <div class="field">
+        <label class="label">
+          Password
+        </label>
+    <p className="control has-icons-left">
+      <input className="input" type="password" placeholder="Password"  name='Password' onChange={handleInputChange}/>
+      <span className="icon is-small is-left">
+        <i className="fas fa-lock"></i>
+      </span>
+      </p>
+      </div>
+      <div class="field is-grouped">
+    <div class="control">
+    <button class="button is-link" type="submit">Sign In</button>
+    </div>
+    <div class="control">
+    <button class="button is-link is-light" type="reset">Reset</button>
+    </div>
+    </div>
+      
+</form>
     
-
   )
 }
 export default Login
