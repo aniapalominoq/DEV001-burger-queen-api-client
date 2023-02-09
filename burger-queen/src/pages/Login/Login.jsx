@@ -1,19 +1,42 @@
 import { useForm } from "../../hooks/useForm";
 import "./Login.css";
 
-const initialForm = {};
-const validationForm = () => {};
+const initialForm = {
+  email: "",
+  password: "",
+};
+const validateForm = (form) => {
+  let errors = {};
+  //let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+  let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+  //let regexComments = /^.{1,255}$/; solo acepta 255
+  let regexPassword = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,}$/;
+
+  if (!form.email.trim()) {
+    errors.email = "El campo email es requerido";
+  } else if (!regexEmail.test(form.email.trim())) {
+    errors.email = "El campo 'email' es incorrecto";
+  }
+  if (!form.password.trim()) {
+    errors.password = "El campo 'password' es requerido";
+  } else if (!regexPassword.test(form.password.trim())) {
+    errors.password =
+      "minimo 8 caracteres ,al menos una letras mayuscula ,una minuscula, un numero y NO tener otros símbolos";
+  }
+
+  return errors;
+};
 
 const Login = () => {
   const {
     form,
-    error,
+    errors,
     loading,
     response,
     handleChange,
     handleBlur,
     handleSubmit,
-  } = useForm(initialForm, validationForm);
+  } = useForm(initialForm, validateForm);
 
   /*  const [datos, setDatos] = useState({
       Email:'',
@@ -55,8 +78,8 @@ const Login = () => {
     <section className="container">
       <form className="container-form" onSubmit={handleSubmit}>
         <h1 className="form-title">Burguer Queen</h1>
-        <div class="field">
-          <label class="label">Email</label>
+        <div className="field">
+          <label className="label">Email</label>
           <p className="control has-icons-left has-icons-right">
             <input
               className="input"
@@ -75,9 +98,10 @@ const Login = () => {
               <i className="fas fa-check"></i>
             </span>
           </p>
+          {errors.email && <p className="help is-danger">{errors.email}</p>}
         </div>
-        <div class="field">
-          <label class="label">Email</label>
+        <div className="field">
+          <label className="label">Password</label>
           <p className="control has-icons-left has-icons-right">
             <input
               className="input"
@@ -96,9 +120,12 @@ const Login = () => {
               <i className="fas fa-eye"></i>
             </span>
           </p>
+          {errors.password && (
+            <p className="help is-danger">{errors.password}</p>
+          )}
         </div>
-        <div class="btn-control">
-          <input class="button" type="submit" value="Sign In" />
+        <div className="btn-control">
+          <input className="button" type="submit" value="Sign In" />
         </div>
       </form>
     </section>
