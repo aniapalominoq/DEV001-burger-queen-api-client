@@ -1,4 +1,3 @@
-import Loader from "../../components/loarder/Loader";
 import { useForm } from "../../hooks/useForm";
 import "./Login.css";
 

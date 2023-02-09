@@ -10,7 +10,6 @@
     "fake-api": "json-server --watch db.json --port 5000 -m ./node_modules/json-server-auth"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3",
     "bulma": "^0.9.4",
     "json": "^11.0.0",
     "react": "^18.2.0",
