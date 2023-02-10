@@ -1,5 +1,6 @@
 import { useForm } from "../../hooks/useForm";
 import "./Login.css";
+import Loader  from "../../components/Loarder/Loader";
 
 const initialForm = {
   email: "",
@@ -88,7 +89,8 @@ const Login = () => {
           <input className="button" type="submit" value="Sign In" />
         </div>
       </form>
-      {/*loading && <Loader />*/}
+     { loading && <Loader/>}
+     {response && alert("Bienvenidos")}
     </section>
   );
 };
