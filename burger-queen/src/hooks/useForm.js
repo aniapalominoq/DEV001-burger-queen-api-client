@@ -46,21 +46,7 @@ export const useForm = (initialForm, validateForm) => {
 
     })
     .catch((error)=>error);
-      //--------------------------
-      // helpHttp()
-      //   .post("http://localhost:5000/login", {
-      //     body: form,
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //       Accept: "application/json",
-      //     },
-      //   })
-      //   .then((res) => {
-      //     console.log(res)
-      //     setLoading(false);
-      //     setResponse(true);
-       
-      //   });
+     
     } else {
       return ;
     }
