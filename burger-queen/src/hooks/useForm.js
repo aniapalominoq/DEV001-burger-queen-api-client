@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { heplHttp } from "../helpers/helpHttp";
+
 
 export const useForm = (initialForm, validateForm) => {
   const [form, setForm] = useState(initialForm);
@@ -25,22 +25,44 @@ export const useForm = (initialForm, validateForm) => {
     if (Object.keys(errors).length === 0) {
       alert("enviando formulario");
       setLoading(true);
+      fetch("http://localhost:5000/login",{
+        method: "POST",
+        body: JSON.stringify(
+          {
+          email: form.email,
+          password: form.password,
+        }
+        ),
+        headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+    }).then((resp)=>resp.json())
+    .then((data)=>{
+      setLoading(false);
+      console.log(data.accessToken)
+      setResponse(true);
+      
+
+    })
+    .catch((error)=>error);
       //--------------------------
-      heplHttp()
-        .post("http://localhost:5000/login", {
-          body: form,
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        })
-        .then((res) => {
-          setLoading(false);
-          setResponse(true);
-        });
-      //----------------------------
+      // helpHttp()
+      //   .post("http://localhost:5000/login", {
+      //     body: form,
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       Accept: "application/json",
+      //     },
+      //   })
+      //   .then((res) => {
+      //     console.log(res)
+      //     setLoading(false);
+      //     setResponse(true);
+       
+      //   });
     } else {
-      return;
+      return ;
     }
   };
   return {
