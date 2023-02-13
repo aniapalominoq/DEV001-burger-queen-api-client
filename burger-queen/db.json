@@ -27,6 +27,11 @@
       "lastname": "Monge",
       "age": 32,
       "id": 4
+    },
+    {
+      "email": "eri@gmail.com",
+      "password": "$2a$10$Wx5pvKxcQ7BLCXYWPKBALuD7BZ6pyNCeUrhqahV1zGuj1uIPhuyPW",
+      "id": 5
     }
   ]
 }
