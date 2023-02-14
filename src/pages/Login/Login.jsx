@@ -4,8 +4,7 @@ import PrivateRoute from "../../components/router/PrivateRoute";
 import { useAuthContext } from "../../Context/authContext";
 import { useState } from "react";
 
-const {isAuthenticated} = useAuthContext; 
-
+const { isAuthenticated } = useAuthContext;
 
 // const validateForm = (form) => {
 //   let errors = {};
@@ -25,8 +24,8 @@ const {isAuthenticated} = useAuthContext;
 // };
 
 const Login = () => {
-  const {peticion} = useAuthContext();
-  const [form, setForm] = useState('');
+  const { peticion } = useAuthContext();
+  const [form, setForm] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target; //destructurar el objeto event.target
@@ -41,19 +40,19 @@ const Login = () => {
     // setErrors(validateForm(form)); //llegar con los errores en el formulario
   };
   const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(event.target.email.value)
-        peticion(event.target.email.value, event.target.password.value)
-        // setErrors(validateForm(form)); //que no existan errores
-        // if (Object.keys(errors).length === 0) {
-        //   alert("enviando formulario");
-        //   setLoading(true);
-        
-          
-        // } else {
-        //   return ;
-        // }
-      };
+    event.preventDefault();
+    console.log(event.target.email.value);
+    peticion(event.target.email.value, event.target.password.value);
+
+    // setErrors(validateForm(form)); //que no existan errores
+    // if (Object.keys(errors).length === 0) {
+    //   alert("enviando formulario");
+    //   setLoading(true);
+
+    // } else {
+    //   return ;
+    // }
+  };
   return (
     <section className="container">
       <form className="container-form" onSubmit={handleSubmit}>
@@ -108,9 +107,8 @@ const Login = () => {
           <input className="button" type="submit" value="Sign In" />
         </div>
       </form>
-     {/* { loading && <Loader/>} */}
-     {isAuthenticated && <PrivateRoute/>}
- 
+      {/* { loading && <Loader/>} */}
+      {isAuthenticated && <PrivateRoute />}
     </section>
   );
 };
