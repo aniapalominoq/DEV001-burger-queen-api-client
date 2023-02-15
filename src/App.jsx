@@ -1,7 +1,6 @@
 import Login from "./pages/Login/Login.jsx";
 import "bulma/css/bulma.min.css";
 import Footer from "./components/Footer/Footer.jsx";
-import Header from "./components/Header/Header.jsx";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
@@ -15,7 +14,6 @@ function App() {
   return (
     <AuthContextProvider>
       <Router>
-        <Header />
         <Routes>
           <Route path="/" element={<PublicRoute />}>
             <Route index element={<Home />} />

@@ -29,6 +29,7 @@ const Home = () => {
 
   return (
     <>
+      <Header />
       <section className="contenedor-fecha">
         <p className="fecha">
           {`${diasSemana[todayDate.getDay()]},${todayDate.getDate()} de ${
