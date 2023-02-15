@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { LOGIN } from "../../config/routes/paths.js";
 import "./Header.css";
 
 const Header = () => {
@@ -6,9 +8,9 @@ const Header = () => {
     <header className="bienvenida">
       <span> Burger Queen</span>
 
-      <nav>
-        <i class="fa-solid fa-right-to-bracket"></i>
-      </nav>
+      <Link to={LOGIN}>
+        <i class="fa-solid fa-right-to-bracket "></i>
+      </Link>
     </header>
   );
 };
