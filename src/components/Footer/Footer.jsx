@@ -5,7 +5,10 @@ const Footer = () => {
   return (
     <footer className="Footer">
       <strong>Copyright © 2023</strong>
-      <span>Desarrollado por</span>
+      <span>
+        {" "}
+        <strong>Desarrollado por</strong>{" "}
+      </span>
       <a href="https://github.com/aniapalominoq" target="_blank">
         Melania Palomino 🇵🇪
       </a>

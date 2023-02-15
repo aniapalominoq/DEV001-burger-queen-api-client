@@ -1,18 +1,48 @@
-import React from 'react';
+import React from "react";
 import "./Home.css";
+import Header from "../../components/Header/Header";
 const Home = () => {
-    return (
-        <div>
-            <h1 className="form-title">Burguer Queen</h1>
-            <h2 className="home-title">Quien eres?</h2>
-            <div className="btn-control">
-          <input className="button" type="submit" value="ADMIN" />
-        </div>
-        <div className="btn-control">
-          <input className="button" type="submit" value="MESERO" />
-        </div>
-        </div>
-    );
-}
+  const meses = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
+  const diasSemana = [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sábado",
+  ];
+  const todayDate = new Date();
+
+  return (
+    <>
+      <Header />
+      <section className="contenedor-fecha">
+        <p className="fecha">
+          {`${diasSemana[todayDate.getDay()]},${todayDate.getDate()} de ${
+            meses[todayDate.getMonth()]
+          } del ${todayDate.getFullYear()}`}
+        </p>
+      </section>
+      <section className="fondo">
+        <p>¡Cada día es un nuevo comenzar!</p>
+        <p>«Lo que haces hoy puede mejorar todos tus mañanas»</p>
+      </section>
+    </>
+  );
+};
 
 export default Home;
