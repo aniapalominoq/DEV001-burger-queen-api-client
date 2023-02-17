@@ -6,6 +6,9 @@ import {
   useContext,
 } from "react";
 import PropTypes from "prop-types";
+import { HOME } from "../config/routes/paths";
+import { Navigate } from "react-router-dom";
+
 
 export const AuthContext = createContext();
 export function AuthContextProvider({ children }) {
@@ -13,11 +16,8 @@ export function AuthContextProvider({ children }) {
     localStorage.getItem("users") ?? false
   );
 
-  // const form = {
-  //   email: "meli@mail.com",
-  //   password: "admin",
-  // };
-  const peticion = (email1, password1) => {
+  const [loading, setLoading] = useState(false);
+  const peticion = useCallback(function (email1, password1) {
     fetch("http://localhost:5000/login", {
       method: "POST",
       body: JSON.stringify({
@@ -31,7 +31,7 @@ export function AuthContextProvider({ children }) {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        // setLoading(false);
+        setLoading(false);
         //Guardar token en local storage
         localStorage.setItem("users", JSON.stringify(data));
         data.accessToken ? setIsAuthenticated(true) : setIsAuthenticated(false);
@@ -50,37 +50,37 @@ export function AuthContextProvider({ children }) {
         } */
       })
       .catch((error) => alert(`${error}, "Clave Incorrecta"`));
-  };
+}, []);
 
-  const login2 = useCallback(function () {
-    // const [form, setForm] = useState(initialForm);
-    // const [errors, setErrors] = useState({});
+  // const login2 = useCallback(function () {
+   
+    
     // const [loading, setLoading] = useState(false);
 
-    return {
+  //   return {
       // form,
       // errors,
       // loading,
-      setIsAuthenticated,
+  //     setIsAuthenticated,
       // handleChange,
       // handleBlur,
       // handleSubmit,
-    };
-  }, []);
+  //   };
+  // }, []);
 
-  const logout = useCallback(function () {
-    localStorage.removeItem("users");
+  const logout = () => {
     setIsAuthenticated(false);
-  }, []);
+  };
 
   const value = useMemo(
     () => ({
       peticion,
-      login2,
+      // login2,
       logout,
       isAuthenticated,
+      setIsAuthenticated,
     }),
-    [login2, logout, isAuthenticated]
+    [peticion, logout, isAuthenticated,setIsAuthenticated]
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

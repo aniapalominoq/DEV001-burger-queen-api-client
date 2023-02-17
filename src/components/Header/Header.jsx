@@ -5,11 +5,11 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <header className="bienvenida">
+    <header className="bienvenida" title="header">
       <span> Burger Queen</span>
 
       <Link to={LOGIN}>
-        <i class="fa-solid fa-right-to-bracket "></i>
+        <i className="fa-solid fa-right-to-bracket "></i>
       </Link>
     </header>
   );
