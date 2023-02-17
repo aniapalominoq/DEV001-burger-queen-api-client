@@ -1,25 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logout from "../../components/Logout/Logout";
+import PrivateRoute from "../../components/router/PrivateRoute";
 import { useAuthContext } from "../../Context/authContext";
 import "./WaiterView.css";
 
 const WaiterView = () => {
-  const { isAuthenticated } = useAuthContext;
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (!isAuthenticated) {
-      localStorage.removeItem("users");
-      isAuthenticated(false);
-    }
-  };
+  const { isAuthenticated,  setIsAuthenticated} = useAuthContext;
+  // const navigate = useNavigate();
+  // const handleSubmit = () => {
+  //   if (!isAuthenticated) {
+  //     localStorage.removeItem("users");
+  //     navigate('/')
+  //   }
+  // };
   return (
     <>
       <header className="header-waiterView">
         <button className="button btn-primary">
-          <i class="fa-solid fa-bars"></i>
+          <i className="fa-solid fa-bars"></i>
         </button>
         <span>
-          <i class="fa-duotone fa-user-tie-hair"> </i>
+          <i className="fa-duotone fa-user-tie-hair"> </i>
+          <Logout/>
         </span>
       </header>
       <h1>Tables</h1>
@@ -43,12 +46,7 @@ const WaiterView = () => {
           <p className="title-tables">N° 6</p>
         </Link>
       </div>
-      <input
-        className="button"
-        type="submit"
-        value="Logout"
-        onClick={handleSubmit}
-      />
+      
     </>
   );
 };

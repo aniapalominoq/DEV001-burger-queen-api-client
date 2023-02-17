@@ -4,7 +4,18 @@ import PrivateRoute from "../../components/router/PrivateRoute";
 import { useAuthContext } from "../../Context/authContext";
 import { useState } from "react";
 
+
+// const initialForm = {
+//   email: "",
+//   password: "",
+// };
 const { isAuthenticated } = useAuthContext;
+
+// const [form, setForm] = useState(initialForm);
+// const [errors, setErrors] = useState({});
+
+
+
 
 // const validateForm = (form) => {
 //   let errors = {};
@@ -24,7 +35,7 @@ const { isAuthenticated } = useAuthContext;
 // };
 
 const Login = () => {
-  const { peticion } = useAuthContext();
+  const { peticion}  = useAuthContext();
   const [form, setForm] = useState("");
 
   const handleChange = (event) => {
@@ -77,7 +88,7 @@ const Login = () => {
               <i className="fas fa-check"></i>
             </span>
           </p>
-          {/* {errors.email && <p className="help is-danger">{errors.email}</p>} */}
+          {/* {errors.email && <p className="help is-danger">{errors.email}></p>} */}
         </div>
         <div className="field">
           <label className="label">Password</label>
@@ -100,8 +111,8 @@ const Login = () => {
             </span>
           </p>
           {/* {errors.password && (
-            {/* <p className="help is-danger">{errors.password}</p> */}
-          {/* )} */}
+            <p className="help is-danger">{errors.password}</p>
+           )} */}
         </div>
         <div className="btn-control">
           <input className="button" type="submit" value="Sign In" />

@@ -21,7 +21,7 @@ function App() {
           </Route>
           <Route path={PRIVATE} element={<PrivateRoute />}>
             <Route index element={<WaiterView />} />
-            <Route path={LOGOUT} element={<Login />} />
+            <Route path={LOGOUT} element={<Home />} />
           </Route>
         </Routes>
         <Footer />
