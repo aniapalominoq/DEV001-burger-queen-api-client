@@ -8,7 +8,7 @@ const Header = () => {
     <header className="bienvenida" title="header">
       <span> Burger Queen</span>
 
-      <Link to={LOGIN}>
+      <Link to={LOGIN} role="button">
         <i className="fa-solid fa-right-to-bracket "></i>
       </Link>
     </header>

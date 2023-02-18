@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
@@ -117,27 +117,23 @@
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -177,26 +173,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
 import { Link } from "react-router-dom";
+import Logout from "../../components/Logout/Logout";
+import PrivateRoute from "../../components/router/PrivateRoute";
 import { useAuthContext } from "../../Context/authContext";
 import "./WaiterView.css";
 &nbsp;
 const WaiterView = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  const { isAuthenticated } = <span class="cstat-no" title="statement not covered" >useAuthContext;</span>
-  const handleSubmit = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    event.preventDefault();</span>
-<span class="cstat-no" title="statement not covered" >    if (!isAuthenticated) {</span>
-<span class="cstat-no" title="statement not covered" >      localStorage.removeItem("users");</span>
-<span class="cstat-no" title="statement not covered" >      isAuthenticated(false);</span>
-    }
-  };
+  const { isAuthenticated,  setIsAuthenticated} = <span class="cstat-no" title="statement not covered" >useAuthContext;</span>
+  // const navigate = useNavigate();
+  // const handleSubmit = () =&gt; {
+  //   if (!isAuthenticated) {
+  //     localStorage.removeItem("users");
+  //     navigate('/')
+  //   }
+  // };
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;&gt;
       &lt;header className="header-waiterView"&gt;
         &lt;button className="button btn-primary"&gt;
-          &lt;i class="fa-solid fa-bars"&gt;&lt;/i&gt;
+          &lt;i className="fa-solid fa-bars"&gt;&lt;/i&gt;
         &lt;/button&gt;
         &lt;span&gt;
-          &lt;i class="fa-duotone fa-user-tie-hair"&gt; &lt;/i&gt;
+          &lt;i className="fa-duotone fa-user-tie-hair"&gt; &lt;/i&gt;
+          &lt;Logout/&gt;
         &lt;/span&gt;
       &lt;/header&gt;
       &lt;h1&gt;Tables&lt;/h1&gt;
@@ -220,12 +219,7 @@ const WaiterView = <span class="cstat-no" title="statement not covered" ><span c
           &lt;p className="title-tables"&gt;N° 6&lt;/p&gt;
         &lt;/Link&gt;
       &lt;/div&gt;
-      &lt;input
-        className="button"
-        type="submit"
-        value="Logout"
-        onClick={handleSubmit}
-      /&gt;
+      
     &lt;/&gt;
   );
 };
@@ -238,7 +232,7 @@ export default WaiterView;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-17T17:45:58.484Z
+                at 2023-02-17T23:55:10.439Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
