@@ -1,16 +1,18 @@
-import Header from '../src/components/Header/Header';
-import {render, screen} from '@testing-library/react';
-import { MemoryRouter} from 'react-router-dom';
+import Header from "../src/components/Header/Header";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 
+describe("Header", () => {
+  beforeEach(() => {
+    render(<Header />, { wrapper: MemoryRouter });
+  });
 
-
-describe('Header', () => {
-    it('Debe renderizarse', () => {
-    render(<Header/>, {wrapper: MemoryRouter});
-    const headers = screen.getByText('Burger Queen')
+  it("Debe renderizarse", () => {
+    const headers = screen.getByText("Burger Queen");
     expect(headers).toBeDefined();
-    }
-  );
-
+  });
+  it("Debe haber un link", () => {
+    const link = screen.getByRole("button");
+    expect(link).toBeInTheDocument();
+  });
 });
-
