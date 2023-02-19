@@ -1,24 +1,19 @@
     import React from 'react';
-    // import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { LOGOUT } from '../../config/routes/paths';
 import { useAuthContext } from '../../Context/authContext';
-    import PrivateRoute from '../router/PrivateRoute';
-import PublicRoute from '../router/PublicRoute';
-    
+  
 
     const Logout = () => { 
-        // const navigate = useNavigate();
-        const { isAuthenticated, setIsAuthenticated } = useAuthContext;
-        // const [closet1, setcloset1 ] = useState()
+        const { isAuthenticated } = useAuthContext;
         const setcloset = () => {
             if(!isAuthenticated){
-                localStorage.removeItem("users")
-               {<PrivateRoute/>}
-               alert('bienvenido al home')
+            localStorage.removeItem("users");
             }  
         }
         return (
             <div>
-               <button className="button" onClick={setcloset}>LOGOUT</button> 
+               <Link to={LOGOUT} className="button" onClick={setcloset}>LOGOUT</Link> 
             </div>
         );
     }
