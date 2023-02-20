@@ -6,8 +6,6 @@ import {
   useContext,
 } from "react";
 import PropTypes from "prop-types";
-import { HOME } from "../config/routes/paths";
-import { Navigate } from "react-router-dom";
 
 
 export const AuthContext = createContext();
@@ -42,32 +40,12 @@ export function AuthContextProvider({ children }) {
         if (readLocalStorage === "Incorrect password")
           return alert("Incorrect password");
 
-        /*  if (data.accessToken) {
-          setIsAuthenticated(true);
-        } else {
-          setIsAuthenticated(false);
-          alert("no tiene permiso de acceso");
-        } */
+      
       })
       .catch((error) => alert(`${error}, "Clave Incorrecta"`));
 }, []);
 
-  // const login2 = useCallback(function () {
-   
-    
-    // const [loading, setLoading] = useState(false);
-
-  //   return {
-      // form,
-      // errors,
-      // loading,
-  //     setIsAuthenticated,
-      // handleChange,
-      // handleBlur,
-      // handleSubmit,
-  //   };
-  // }, []);
-
+ 
   const logout = () => {
     setIsAuthenticated(false);
   };
@@ -75,7 +53,6 @@ export function AuthContextProvider({ children }) {
   const value = useMemo(
     () => ({
       peticion,
-      // login2,
       logout,
       isAuthenticated,
       setIsAuthenticated,

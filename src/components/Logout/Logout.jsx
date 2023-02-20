@@ -1,14 +1,16 @@
     import React from 'react';
 import { Link } from 'react-router-dom';
-import { LOGOUT } from '../../config/routes/paths';
+import { HOME, LOGOUT } from '../../config/routes/paths';
 import { useAuthContext } from '../../Context/authContext';
+import PrivateRoute from '../router/PrivateRoute';
   
 
     const Logout = () => { 
         const { isAuthenticated } = useAuthContext;
         const setcloset = () => {
-            if(!isAuthenticated){
+            if(!isAuthenticated){ 
             localStorage.removeItem("users");
+            location.reload();
             }  
         }
         return (
