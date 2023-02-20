@@ -27,11 +27,17 @@ const Logout = () => {
     }
   };
   return (
-    <div>
-      <Link to={PRIVATE} className="button" onClick={setcloset}>
-        LOGOUT
+    <>
+      <Link
+        to={PRIVATE}
+        className="button is-dark is-medium"
+        onClick={setcloset}
+      >
+        <span className="icon fas fa-lg">
+          <i className="fa-solid fa-right-from-bracket"></i>
+        </span>
       </Link>
-    </div>
+    </>
   );
 };
 

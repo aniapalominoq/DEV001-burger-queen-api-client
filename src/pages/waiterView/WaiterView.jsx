@@ -6,18 +6,10 @@ import { useAuthContext } from "../../Context/authContext";
 import "./WaiterView.css";
 
 const WaiterView = () => {
-  const { isAuthenticated, setIsAuthenticated } = useAuthContext;
-  // const navigate = useNavigate();
-  // const handleSubmit = () => {
-  //   if (!isAuthenticated) {
-  //     localStorage.removeItem("users");
-  //     navigate('/')
-  //   }
-  // };
   return (
     <>
       <header className="header-waiterView">
-        <button className="button btn-primary">
+        <button className="button is-dark">
           <i className="fa-solid fa-bars"></i>
         </button>
         <span>
