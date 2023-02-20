@@ -1,9 +1,8 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
-import { HOME, LOGOUT, PRIVATE } from "../../config/routes/paths";
+import { Link } from "react-router-dom";
+import { PRIVATE } from "../../config/routes/paths";
 import { useAuthContext } from "../../Context/authContext";
 import Swal from "sweetalert2";
-import PrivateRoute from "../router/PrivateRoute";
 
 const Logout = () => {
   const { isAuthenticated } = useAuthContext;
@@ -15,14 +14,14 @@ const Logout = () => {
         text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
+        confirmButtonColor: "#61C002",
+        cancelButtonColor: "rgba(253, 140, 0, 1)",
         confirmButtonText: "Yes, you logged out!",
       }).then((result) => {
         if (result.isConfirmed) {
           localStorage.removeItem("users");
           location.reload();
-          Swal.fire("Log out!", "Your file has been deleted.", "success");
+          Swal.fire("Log out!", "Your section has been closed", "success");
         }
       });
     }
