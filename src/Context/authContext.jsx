@@ -6,7 +6,7 @@ import {
   useContext,
 } from "react";
 import PropTypes from "prop-types";
-
+import Swal from "sweetalert2";
 
 export const AuthContext = createContext();
 export function AuthContextProvider({ children }) {
@@ -14,7 +14,6 @@ export function AuthContextProvider({ children }) {
     localStorage.getItem("users") ?? false
   );
 
-  const [loading, setLoading] = useState(false);
   const peticion = useCallback(function (email1, password1) {
     fetch("http://localhost:5000/login", {
       method: "POST",
@@ -29,23 +28,35 @@ export function AuthContextProvider({ children }) {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        setLoading(false);
         //Guardar token en local storage
         localStorage.setItem("users", JSON.stringify(data));
         data.accessToken ? setIsAuthenticated(true) : setIsAuthenticated(false);
         const readLocalStorage = JSON.parse(localStorage.getItem("users"));
 
         if (readLocalStorage === "Cannot find user")
-          return alert("Cannot find user");
+          //return alert("Cannot find user");
+          return Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Cannot find user!",
+          });
+
         if (readLocalStorage === "Incorrect password")
-          return alert("Incorrect password");
-
-      
+          return Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Incorrect password!",
+          });
       })
-      .catch((error) => alert(`${error}, "Clave Incorrecta"`));
-}, []);
+      .catch(() =>
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "No se pudo conectar, intenta más tarde",
+        })
+      );
+  }, []);
 
- 
   const logout = () => {
     setIsAuthenticated(false);
   };
@@ -55,9 +66,8 @@ export function AuthContextProvider({ children }) {
       peticion,
       logout,
       isAuthenticated,
-      setIsAuthenticated,
     }),
-    [peticion, logout, isAuthenticated,setIsAuthenticated]
+    [peticion, logout, isAuthenticated, setIsAuthenticated]
   );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

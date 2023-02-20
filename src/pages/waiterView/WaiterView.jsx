@@ -6,7 +6,7 @@ import { useAuthContext } from "../../Context/authContext";
 import "./WaiterView.css";
 
 const WaiterView = () => {
-  const { isAuthenticated,  setIsAuthenticated} = useAuthContext;
+  const { isAuthenticated, setIsAuthenticated } = useAuthContext;
   // const navigate = useNavigate();
   // const handleSubmit = () => {
   //   if (!isAuthenticated) {
@@ -22,7 +22,7 @@ const WaiterView = () => {
         </button>
         <span>
           <i className="fa-duotone fa-user-tie-hair"> </i>
-          <Logout/>
+          <Logout />
         </span>
       </header>
       <h1>Tables</h1>
@@ -46,7 +46,6 @@ const WaiterView = () => {
           <p className="title-tables">N° 6</p>
         </Link>
       </div>
-      
     </>
   );
 };

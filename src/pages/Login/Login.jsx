@@ -1,21 +1,17 @@
 import "./Login.css";
-// import Loader  from "../../components/Loarder/Loader";
+import Loader from "../../components/Loarder/Loader";
 import PrivateRoute from "../../components/router/PrivateRoute";
 import { useAuthContext } from "../../Context/authContext";
 import { useState } from "react";
-
 
 // const initialForm = {
 //   email: "",
 //   password: "",
 // };
-const { isAuthenticated } = useAuthContext;
+const { isAuthenticated, loading } = useAuthContext;
 
 // const [form, setForm] = useState(initialForm);
 // const [errors, setErrors] = useState({});
-
-
-
 
 // const validateForm = (form) => {
 //   let errors = {};
@@ -35,7 +31,7 @@ const { isAuthenticated } = useAuthContext;
 // };
 
 const Login = () => {
-  const { peticion}  = useAuthContext();
+  const { peticion } = useAuthContext();
   const [form, setForm] = useState("");
 
   const handleChange = (event) => {
@@ -48,21 +44,11 @@ const Login = () => {
 
   const handleBlur = (event) => {
     handleChange(event);
-    // setErrors(validateForm(form)); //llegar con los errores en el formulario
   };
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(event.target.email.value);
     peticion(event.target.email.value, event.target.password.value);
-
-    // setErrors(validateForm(form)); //que no existan errores
-    // if (Object.keys(errors).length === 0) {
-    //   alert("enviando formulario");
-    //   setLoading(true);
-
-    // } else {
-    //   return ;
-    // }
   };
   return (
     <section className="container">
@@ -88,7 +74,6 @@ const Login = () => {
               <i className="fas fa-check"></i>
             </span>
           </p>
-          {/* {errors.email && <p className="help is-danger">{errors.email}></p>} */}
         </div>
         <div className="field">
           <label className="label">Password</label>
@@ -110,15 +95,12 @@ const Login = () => {
               <i className="fas fa-eye"></i>
             </span>
           </p>
-          {/* {errors.password && (
-            <p className="help is-danger">{errors.password}</p>
-           )} */}
         </div>
         <div className="btn-control">
           <input className="button" type="submit" value="Sign In" />
         </div>
       </form>
-      {/* { loading && <Loader/>} */}
+
       {isAuthenticated && <PrivateRoute />}
     </section>
   );
