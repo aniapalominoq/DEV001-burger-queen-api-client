@@ -37,6 +37,7 @@ const Login = () => {
               is-medium
               placeholder="Email"
               name="email"
+              autoComplete
               onChange={handleChange}
               value={form.email}
               required
@@ -54,6 +55,7 @@ const Login = () => {
               type={viewpass}
               placeholder="Password"
               name="password"
+              autoComplete
               onChange={handleChange}
               value={form.password}
               required

@@ -21,12 +21,12 @@
       "id": 3
     },
     {
+      "id": 4,
       "email": "meli@mail.com",
       "password": "$2a$10$AkLDRUcRnl71.Y6dozVGEuB5GmoPD29/pTTQdDIDI0P1gpSS01sqK",
-      "firstname": "melis",
-      "lastname": "Monge",
-      "age": 32,
-      "id": 4
+      "firstname": "Melania",
+      "lastname": "Palomino",
+      "role": "waiter"
     },
     {
       "email": "eri@gmail.com",

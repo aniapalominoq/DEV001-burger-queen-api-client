@@ -6,12 +6,22 @@ import { useAuthContext } from "../../Context/authContext";
 import "./WaiterView.css";
 
 const WaiterView = () => {
+  const dateUser = JSON.parse(localStorage.getItem("users"));
+  //console.log(dateUser.user);
+
   return (
     <>
       <header className="header-waiterView">
-        <button className="button is-dark">
-          <i className="fa-solid fa-bars"></i>
-        </button>
+        <span className="icon-text">
+          <span className="icon  fa fas-2px is-large">
+            <i className="fa-solid fa-burger fas fa-2x"></i>
+          </span>
+          <span className="title">{dateUser.user.role}</span>
+        </span>
+
+        <span className="fiel">
+          <span className="title">{`${dateUser.user.firstname} ${dateUser.user.lastname}`}</span>
+        </span>
         <span>
           <i className="fa-duotone fa-user-tie-hair"> </i>
           <Logout />
@@ -19,6 +29,7 @@ const WaiterView = () => {
       </header>
       <h1>Tables</h1>
       <div className="container-tables">
+        hola
         <Link to="" className="item-tables">
           <p className="title-tables">N° 1</p>
         </Link>
