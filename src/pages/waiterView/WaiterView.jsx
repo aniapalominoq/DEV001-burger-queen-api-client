@@ -7,7 +7,7 @@ import "./WaiterView.css";
 
 const WaiterView = () => {
   const dateUser = JSON.parse(localStorage.getItem("users"));
-  //console.log(dateUser.user);
+  console.log(dateUser.user);
 
   return (
     <>

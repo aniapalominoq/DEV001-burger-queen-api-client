@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { PRIVATE } from "../../config/routes/paths";
+import { LOGOUT, PRIVATE } from "../../config/routes/paths";
 import { useAuthContext } from "../../Context/authContext";
 import Swal from "sweetalert2";
 
@@ -19,7 +19,7 @@ const Logout = () => {
         confirmButtonText: "Yes, you logged out!",
       }).then((result) => {
         if (result.isConfirmed) {
-          localStorage.removeItem("users");
+          localStorage.clear("users");
           location.reload();
           Swal.fire("Log out!", "Your section has been closed", "success");
         }

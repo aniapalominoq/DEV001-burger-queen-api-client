@@ -29,9 +29,12 @@
       "role": "waiter"
     },
     {
+      "id": 5,
       "email": "eri@gmail.com",
       "password": "$2a$10$Wx5pvKxcQ7BLCXYWPKBALuD7BZ6pyNCeUrhqahV1zGuj1uIPhuyPW",
-      "id": 5
+      "firstname": "Erika",
+      "lastname": "Duarte",
+      "role": "waiter"
     }
   ]
 }
