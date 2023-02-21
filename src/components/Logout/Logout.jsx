@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { LOGOUT, PRIVATE } from "../../config/routes/paths";
+import { PRIVATE } from "../../config/routes/paths";
 import { useAuthContext } from "../../Context/authContext";
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 
 const Logout = () => {
   const { isAuthenticated } = useAuthContext;

@@ -31,22 +31,54 @@ const WaiterView = () => {
       <div className="container-tables">
         hola
         <Link to="" className="item-tables">
-          <p className="title-tables">N° 1</p>
+          <p className="title-tables"><div>
+          <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
+          </div> Mesa N°1</p>
         </Link>
         <Link to="" className="item-tables">
-          <p className="title-tables">N° 2</p>
+          <p className="title-tables"><div>
+          <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
+          </div> Mesa N°2</p>
         </Link>
         <Link to="" className="item-tables">
-          <p className="title-tables">N° 3</p>
+          <p className="title-tables"><div>
+          <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
+          </div> Mesa N°3</p>
         </Link>
         <Link to="" className="item-tables">
-          <p className="title-tables">N° 4</p>
+          <p className="title-tables"><div>
+          <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
+          </div> Mesa N°4</p>
         </Link>
         <Link to="" className="item-tables">
-          <p className="title-tables">N° 5</p>
+          <p className="title-tables"><div>
+          <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
+          </div> Mesa N°5</p>
         </Link>
         <Link to="" className="item-tables">
-          <p className="title-tables">N° 6</p>
+          <p className="title-tables"><div>
+          <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
+          </div> Mesa N°6</p>
+        </Link>
+        <Link to="" className="item-tables">
+          <p className="title-tables"><div>
+          <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
+          </div> Mesa N°7</p>
+        </Link>
+        <Link to="" className="item-tables">
+          <p className="title-tables"><div>
+          <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
+          </div> Mesa N°8</p>
+        </Link>
+        <Link to="" className="item-tables">
+          <p className="title-tables"><div>
+          <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
+          </div> Mesa N°9</p>
+        </Link>
+        <Link to="" className="item-tables">
+          <p className="title-tables"><div>
+          <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
+          </div> Mesa N°10</p>
         </Link>
       </div>
     </>
