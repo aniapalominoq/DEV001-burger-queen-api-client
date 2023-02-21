@@ -1,24 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logout from "../../components/Logout/Logout";
-import PrivateRoute from "../../components/router/PrivateRoute";
-import { useAuthContext } from "../../Context/authContext";
+import Menu from "../../components/menu/menu";
 import "./WaiterView.css";
 
 const WaiterView = () => {
   const dateUser = JSON.parse(localStorage.getItem("users"));
 
-  const modal = () => {
-    console.log('hola soy click')
-    // return (
-//   <div className="modal is-active">
-//   <div className="modal-background"></div>
-//   <div className="modal-content is-clipped">
-//   </div>
-//   <button className="modal-close is-large" aria-label="close"></button>
-// </div>
-    // )
-  }
   return (
     <>
       <header className="header-waiterView">
@@ -37,11 +25,11 @@ const WaiterView = () => {
           <Logout />
         </span>
       </header>
-      <div>
+      <div className="is-justify-content-center ">
       <h1 className="title is-1 has-text-white m-4 p-4">Tables</h1>
       </div>
-      <div className="container-tables mgt-large">
-        <Link to="" className="item-tables" onClick={modal}>
+      <div className="container-tables">
+        <Link to="" className="item-tables" onClick={}>
           <p className="title-tables"><div>
           <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
           </div> Mesa N°1</p>

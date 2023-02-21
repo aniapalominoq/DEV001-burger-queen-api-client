@@ -20,7 +20,7 @@ function App() {
             <Route path={LOGIN} element={<Login />} />
           </Route>
           <Route path={PRIVATE} element={<PrivateRoute />}>
-            <Route index element={<WaiterView />} />
+            <Route index element={<WaiterView/>} />
             <Route path={LOGOUT} element={<Home />} />
           </Route>
         </Routes>
