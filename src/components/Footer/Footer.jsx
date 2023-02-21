@@ -6,8 +6,7 @@ const Footer = () => {
     <footer className="Footer">
       <strong>Copyright © 2023</strong>
       <span>
-        {" "}
-        <strong>Desarrollado por</strong>{" "}
+        <strong>Desarrollado por</strong>
       </span>
       <a href="https://github.com/aniapalominoq" target="_blank">
         Melania Palomino 🇵🇪
