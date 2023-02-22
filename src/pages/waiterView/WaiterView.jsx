@@ -29,7 +29,7 @@ const WaiterView = () => {
       <h1 className="title is-1 has-text-white m-4 p-4">Tables</h1>
       </div>
       <div className="container-tables">
-        <Link to="" className="item-tables" onClick={}>
+        <Link to="" className="item-tables">
           <p className="title-tables"><div>
           <img src="https://img.icons8.com/ios-filled/50/000000/restaurant-table.png"/>
           </div> Mesa N°1</p>

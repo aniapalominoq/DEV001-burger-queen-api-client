@@ -2,60 +2,40 @@
   "users": [
     {
       "id": "1",
-      "role": {
-        "waiter": true,
-        "admin": false,
-        "chef": false
-      },
+      "role": "waiter",
       "email": "erika@gmail.com",
       "password": "12345678"
     },
     {
       "id": "2",
-      "role": {
-        "waiter": false,
-        "admin": false,
-        "chef": true
-      },
+      "role": "chef",
       "email": "akire@gmail.com",
       "password": "123456789"
     },
     {
       "id": "3",
+      "role": "waiter",
       "email": "olivier@mail.com",
       "password": "$2a$10$wnq5vGAFDyyunP9IkapaN.PWPe8hMQHuQoxBWouiqyVdtaKu17rbC",
       "firstname": "Olivier",
       "lastname": "Monge",
-      "age": 32,
-      "role": {
-        "waiter": true,
-        "admin": false,
-        "chef": false
-      }
+      "age": 32
     },
     {
       "id": "4",
+      "role": "admin",
       "email": "meli@mail.com",
       "password": "$2a$10$AkLDRUcRnl71.Y6dozVGEuB5GmoPD29/pTTQdDIDI0P1gpSS01sqK",
       "firstname": "Melania",
-      "lastname": "Palomino",
-      "role": {
-        "waiter": true,
-        "admin": false,
-        "chef": false
-      }
+      "lastname": "Palomino"
     },
     {
       "id": "5",
+      "role": "waiter",
       "email": "eri@gmail.com",
       "password": "$2a$10$Wx5pvKxcQ7BLCXYWPKBALuD7BZ6pyNCeUrhqahV1zGuj1uIPhuyPW",
       "firstname": "Erika",
-      "lastname": "Duarte",
-      "role": {
-        "waiter": true,
-        "admin": false,
-        "chef": false
-      }
+      "lastname": "Duarte"
     }
   ],
   "Products": [
@@ -145,6 +125,18 @@
     },
     {
       "id": "FoTZ8qr"
+    },
+    {
+      "id": "I3AyH_S"
+    },
+    {
+      "id": "z18NxCi"
+    },
+    {
+      "id": "Oh5_Dhk"
+    },
+    {
+      "id": "91CzstK"
     }
   ]
 }

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>0/20</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>0/20</span>
             </div>
         
             
@@ -143,22 +143,7 @@
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,7 +161,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,23 +173,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -213,12 +186,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -232,8 +208,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -257,9 +231,7 @@
   useContext,
 } from "react";
 import PropTypes from "prop-types";
-import { HOME } from "../config/routes/paths";
-import { Navigate } from "react-router-dom";
-&nbsp;
+import Swal from "sweetalert2";
 &nbsp;
 export const AuthContext = <span class="cstat-no" title="statement not covered" >createContext();</span>
 export function <span class="fstat-no" title="function not covered" >AuthContextProvider(</span>{ children }) {
@@ -267,9 +239,8 @@ export function <span class="fstat-no" title="function not covered" >AuthContext
     localStorage.getItem("users") ?? false
   );
 &nbsp;
-  const [loading, setLoading] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
   const peticion = <span class="cstat-no" title="statement not covered" >useCallback(<span class="fstat-no" title="function not covered" >fu</span>nction (email1, password1) {</span>
-<span class="cstat-no" title="statement not covered" >    fetch("http://localhost:5000/login", {</span>
+<span class="cstat-no" title="statement not covered" >    fetch("http://localhost:5003/login", {</span>
       method: "POST",
       body: JSON.stringify({
         email: email1,
@@ -282,42 +253,34 @@ export function <span class="fstat-no" title="function not covered" >AuthContext
     })
       .then(<span class="fstat-no" title="function not covered" >(r</span>esp) =&gt; <span class="cstat-no" title="statement not covered" >resp.json())</span>
       .then(<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {
-<span class="cstat-no" title="statement not covered" >        setLoading(false);</span>
         //Guardar token en local storage
 <span class="cstat-no" title="statement not covered" >        localStorage.setItem("users", JSON.stringify(data));</span>
 <span class="cstat-no" title="statement not covered" >        data.accessToken ? setIsAuthenticated(true) : setIsAuthenticated(false);</span>
         const readLocalStorage = <span class="cstat-no" title="statement not covered" >JSON.parse(localStorage.getItem("users"));</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (readLocalStorage === "Cannot find user")</span>
-<span class="cstat-no" title="statement not covered" >          return alert("Cannot find user");</span>
+          //return alert("Cannot find user");
+<span class="cstat-no" title="statement not covered" >          return Swal.fire({</span>
+            icon: "error",
+            title: "Error",
+            text: "Cannot find user!",
+          });
+&nbsp;
 <span class="cstat-no" title="statement not covered" >        if (readLocalStorage === "Incorrect password")</span>
-<span class="cstat-no" title="statement not covered" >          return alert("Incorrect password");</span>
-&nbsp;
-        /*  if (data.accessToken) {
-          setIsAuthenticated(true);
-        } else {
-          setIsAuthenticated(false);
-          alert("no tiene permiso de acceso");
-        } */
+<span class="cstat-no" title="statement not covered" >          return Swal.fire({</span>
+            icon: "error",
+            title: "Error",
+            text: "Incorrect password!",
+          });
       })
-      .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; <span class="cstat-no" title="statement not covered" >alert(`${error}, "Clave Incorrecta"`))</span>;
-}, []);
-&nbsp;
-  // const login2 = useCallback(function () {
-   
-    
-    // const [loading, setLoading] = useState(false);
-&nbsp;
-  //   return {
-      // form,
-      // errors,
-      // loading,
-  //     setIsAuthenticated,
-      // handleChange,
-      // handleBlur,
-      // handleSubmit,
-  //   };
-  // }, []);
+      .catch(<span class="fstat-no" title="function not covered" >()</span> =&gt;
+<span class="cstat-no" title="statement not covered" >        Swal.fire({</span>
+          icon: "error",
+          title: "Error",
+          text: "No se pudo conectar, intenta más tarde",
+        })
+      );
+  }, []);
 &nbsp;
   const logout = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    setIsAuthenticated(false);</span>
@@ -326,12 +289,10 @@ export function <span class="fstat-no" title="function not covered" >AuthContext
   const value = <span class="cstat-no" title="statement not covered" >useMemo(</span>
 <span class="fstat-no" title="function not covered" >    ()</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
       peticion,
-      // login2,
       logout,
       isAuthenticated,
-      setIsAuthenticated,
     }),
-    [peticion, logout, isAuthenticated,setIsAuthenticated]
+    [peticion, logout, isAuthenticated, setIsAuthenticated]
   );
 <span class="cstat-no" title="statement not covered" >  return &lt;AuthContext.Provider value={value}&gt;{children}&lt;/AuthContext.Provider&gt;;</span>
 }
@@ -349,7 +310,7 @@ export function <span class="fstat-no" title="function not covered" >useAuthCont
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-17T23:55:10.439Z
+                at 2023-02-22T15:13:48.874Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
