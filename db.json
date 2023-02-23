@@ -78,7 +78,7 @@
       "id_product": 1,
       "name_product": "coffe with milk",
       "price_product": 7,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/cafeconleche.png",
       "type_product": "",
       "dateEntry_product": "2023-02-01",
       "category_product": "breakfast"
@@ -87,7 +87,7 @@
       "id_product": 2,
       "name_product": "american coffe",
       "price_product": 7,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/cafeamericano.png",
       "type_product": "",
       "dateEntry_product": "2023-02-02",
       "category_product": "breakfast"
@@ -96,7 +96,7 @@
       "id_product": 4,
       "name_product": "ham and cheese sandwich",
       "price_product": 10,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/sanwichjamon.png",
       "type_product": "",
       "dateEntry_product": "2023-02-09",
       "category_product": "breakfast"
@@ -105,7 +105,7 @@
       "id_product": 7,
       "name_product": "natural fruit juice",
       "price_product": 7,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/jugonature.png",
       "type_product": "",
       "dateEntry_product": "0000-00-00",
       "category_product": "breakfast"
@@ -114,7 +114,7 @@
       "id_product": 8,
       "name_product": "plain burger",
       "price_product": 10,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/buuger.png",
       "type_product": "burger",
       "dateEntry_product": "2023-02-08",
       "category_product": "lunch dinner"
@@ -123,7 +123,7 @@
       "id_product": 9,
       "name_product": "double burger",
       "price_product": 0,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/burf.png",
       "type_product": "burger",
       "dateEntry_product": "2023-02-06",
       "category_product": "lunch dinner"
@@ -132,7 +132,7 @@
       "id_product": 14,
       "name_product": "french fries",
       "price_product": 5,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/papasfritas.png",
       "type_product": "accompaniment",
       "dateEntry_product": "2023-02-09",
       "category_product": "lunch dinner"
@@ -141,7 +141,7 @@
       "id_product": 15,
       "name_product": "Onion rings",
       "price_product": 5,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/oninrings.png",
       "type_product": "accompaniment",
       "dateEntry_product": "2023-02-17",
       "category_product": "lunch dinner"
@@ -159,7 +159,7 @@
       "id_product": 17,
       "name_product": "water 750ml",
       "price_product": 0,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/agua7.png",
       "type_product": "drink",
       "dateEntry_product": "2023-02-01",
       "category_product": "lunch dinner"
@@ -168,7 +168,7 @@
       "id_product": 18,
       "name_product": "soda 500ml",
       "price_product": 7,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/gaseosa5.png",
       "type_product": "drink",
       "dateEntry_product": "2023-02-10",
       "category_product": ""
@@ -177,7 +177,7 @@
       "id_product": 19,
       "name_product": "soda 750ml",
       "price_product": 10,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/gaseosa7.png",
       "type_product": "drink",
       "dateEntry_product": "2023-02-10",
       "category_product": "lunch dinner"
