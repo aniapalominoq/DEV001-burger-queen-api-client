@@ -124,19 +124,9 @@
       "type": "Almuerzo y cena"
     },
     {
-      "id": "FoTZ8qr"
-    },
-    {
-      "id": "I3AyH_S"
-    },
-    {
-      "id": "z18NxCi"
-    },
-    {
-      "id": "Oh5_Dhk"
-    },
-    {
-      "id": "91CzstK"
+      "name": "Edit",
+      "img": "https://img.icons8.com/external-soft-fill-juicy-fish/40/null/external-edit-essentials-soft-fill-soft-fill-juicy-fish.png",
+      "id": "vqzk4ws"
     }
   ]
 }
