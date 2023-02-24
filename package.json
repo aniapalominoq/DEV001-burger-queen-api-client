@@ -7,7 +7,7 @@
     "test": "jest",
     "build": "vite build",
     "preview": "vite preview",
-    "fake-api": "json-server --watch db.json --port 5003 -m ./node_modules/json-server-auth"
+    "fake-api": "json-server --watch db.json --port 5000 -m ./node_modules/json-server-auth"
   },
   "dependencies": {
     "@babel/preset-env": "^7.20.2",
@@ -16,7 +16,6 @@
     "@testing-library/jest-dom": "^5.16.5",
     "babel-jest": "^29.4.3",
     "bulma": "^0.9.4",
-    "bulma-carousel": "^4.0.24",
     "jest-environment-jsdom": "^29.4.3",
     "json": "^11.0.0",
     "prop-types": "^15.8.1",
