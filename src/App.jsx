@@ -8,7 +8,12 @@ import { LOGIN, LOGOUT, ORDERS, PRIVATE } from "./config/routes/paths.js";
 import { AuthContextProvider } from "./Context/authContext.jsx";
 import PublicRoute from "./components/router/PublicRoute.jsx";
 import PrivateRoute from "./components/router/PrivateRoute.jsx";
+<<<<<<< HEAD
 import Orders from "./pages/Orders/Orders.jsx";
+=======
+import Board from "./components/board/board.jsx";
+import Slider from "./components/Slider.jsx";
+>>>>>>> f6d715e09db834d3a7d1a792223524d8d68d413f
 
 function App() {
   return (
@@ -16,7 +21,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<PublicRoute />}>
+<<<<<<< HEAD
             <Route index element={<Orders/>} />
+=======
+            <Route index element={<Slider />} />
+>>>>>>> f6d715e09db834d3a7d1a792223524d8d68d413f
             <Route path={LOGIN} element={<Login />} />
           </Route>
           <Route path={PRIVATE} element={<PrivateRoute />}>
