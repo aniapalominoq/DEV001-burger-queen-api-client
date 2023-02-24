@@ -1,7 +1,6 @@
 import Login from "./pages/Login/Login.jsx";
 import "bulma/css/bulma.min.css";
 import Footer from "./components/Footer/Footer.jsx";
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import WaiterView from "./pages/waiterView/WaiterView.jsx";
