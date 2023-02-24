@@ -4,12 +4,11 @@ import Footer from "./components/Footer/Footer.jsx";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import WaiterView from "./pages/waiterView/WaiterView.jsx";
-import { LOGIN, LOGOUT, PRIVATE } from "./config/routes/paths.js";
+import { LOGIN, LOGOUT, ORDERS, PRIVATE } from "./config/routes/paths.js";
 import { AuthContextProvider } from "./Context/authContext.jsx";
 import PublicRoute from "./components/router/PublicRoute.jsx";
 import PrivateRoute from "./components/router/PrivateRoute.jsx";
-import Board from "./components/board/board.jsx";
-import Slider from "./components/Slider.jsx";
+import Orders from "./pages/Orders/Orders.jsx";
 
 function App() {
   return (
@@ -17,11 +16,12 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<PublicRoute />}>
-            <Route index element={<Slider />} />
+            <Route index element={<Orders/>} />
             <Route path={LOGIN} element={<Login />} />
           </Route>
           <Route path={PRIVATE} element={<PrivateRoute />}>
             <Route index element={<WaiterView />} />
+            <Route path={ORDERS} element={<Orders/>}/>
             <Route path={LOGOUT} element={<Home />} />
           </Route>
         </Routes>

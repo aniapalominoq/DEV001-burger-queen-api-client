@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
-/* body {
+body {
   background-color: rgba(28, 30, 32, 0.938);
 }
  .container {
@@ -17,8 +17,8 @@
   justify-content: center;
   align-self: flex-end;
   margin-bottom: 3.5vh;
-} */
-*/ .form-title {
+}
+.form-title {
   color: rgba(253, 140, 0, 1);
   text-shadow: rgba(0, 0, 0, 0.25);
   font-family: "Akaya Kanadaka", cursive;

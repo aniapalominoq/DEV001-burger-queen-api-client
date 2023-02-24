@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logout from "../../components/Logout/Logout";
-import Menu from "../../components/menu/menu";
 import "./WaiterView.css";
 
 const WaiterView = () => {
