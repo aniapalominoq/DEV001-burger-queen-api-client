@@ -1,7 +1,6 @@
 import Login from "./pages/Login/Login.jsx";
 import "bulma/css/bulma.min.css";
 import Footer from "./components/Footer/Footer.jsx";
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import WaiterView from "./pages/waiterView/WaiterView.jsx";
@@ -17,11 +16,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<PublicRoute />}>
-            <Route index element={<Board/>} />
+            <Route index element={<Board />} />
             <Route path={LOGIN} element={<Login />} />
           </Route>
           <Route path={PRIVATE} element={<PrivateRoute />}>
-            <Route index element={<WaiterView/>} />
+            <Route index element={<WaiterView />} />
             <Route path={LOGOUT} element={<Home />} />
           </Route>
         </Routes>
