@@ -10,6 +10,7 @@ import { AuthContextProvider } from "./Context/authContext.jsx";
 import PublicRoute from "./components/router/PublicRoute.jsx";
 import PrivateRoute from "./components/router/PrivateRoute.jsx";
 import Board from "./components/board/board.jsx";
+import Slider from "./components/Slider.jsx";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<PublicRoute />}>
-            <Route index element={<Board />} />
+            <Route index element={<Slider />} />
             <Route path={LOGIN} element={<Login />} />
           </Route>
           <Route path={PRIVATE} element={<PrivateRoute />}>
