@@ -31,42 +31,6 @@ const Board = () => {
               <img src="https://img.icons8.com/plasticine/50/null/filled-trash.png" />
             </td>
           </tr>
-          <tr>
-            <th>2</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <img src="https://img.icons8.com/external-soft-fill-juicy-fish/40/null/external-edit-essentials-soft-fill-soft-fill-juicy-fish.png" />
-            </td>
-            <td>
-              <img src="https://img.icons8.com/plasticine/50/null/filled-trash.png" />
-            </td>
-          </tr>
-          <tr>
-            <th>3</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <img src="https://img.icons8.com/external-soft-fill-juicy-fish/40/null/external-edit-essentials-soft-fill-soft-fill-juicy-fish.png" />
-            </td>
-            <td>
-              <img src="https://img.icons8.com/plasticine/50/null/filled-trash.png" />
-            </td>
-          </tr>
-          <tr>
-            <th>4</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <img src="https://img.icons8.com/external-soft-fill-juicy-fish/40/null/external-edit-essentials-soft-fill-soft-fill-juicy-fish.png" />
-            </td>
-            <td>
-              <img src="https://img.icons8.com/plasticine/50/null/filled-trash.png" />
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>

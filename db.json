@@ -1,5 +1,5 @@
 {
-  "client": [
+  "clients": [
     {
       "id_client": 1,
       "name_client": "freddy",
@@ -12,26 +12,26 @@
     }
   ],
 
-  "detalle_pedido": [
+  "detail_orders": [
     {
-      "Id_Dtalle_Pedido": 1,
-      "Id_Orders": 1,
-      "Id_Products": 2
+      "id_detail_order": 1,
+      "id_order": 1,
+      "id_product": 2
     },
     {
-      "Id_Dtalle_Pedido": 2,
-      "Id_Orders": 1,
-      "Id_Products": 3
+      "id_detail_order": 2,
+      "id_order": 1,
+      "id_product": 3
     },
     {
-      "Id_Dtalle_Pedido": 3,
-      "Id_Orders": 1,
-      "Id_Products": 2
+      "id_detail_order": 3,
+      "id_order": 1,
+      "id_product": 2
     },
     {
-      "Id_Dtalle_Pedido": 4,
-      "Id_Orders": 1,
-      "Id_Products": 3
+      "id_detail_order": 4,
+      "id_order": 1,
+      "id_product": 3
     }
   ],
   "orders": [
@@ -184,7 +184,7 @@
     }
   ],
 
-  "role": [
+  "roles": [
     {
       "id_role": 1,
       "name_role": "chef"
@@ -225,7 +225,7 @@
       "id_user": 1,
       "name_user": "melania palomino",
       "password": "$2a$10$AkLDRUcRnl71.Y6dozVGEuB5GmoPD29/pTTQdDIDI0P1gpSS01sqK",
-      "email_user": "meli@mail.com",
+      "email": "meli@mail.com",
       "state_user": 0,
       "role_id_role": 3
     },
@@ -233,7 +233,7 @@
       "id_user": 2,
       "name_user": "erika duarte",
       "password": "$2a$10$Wx5pvKxcQ7BLCXYWPKBALuD7BZ6pyNCeUrhqahV1zGuj1uIPhuyPW",
-      "email_user": "erika@burger.com",
+      "email": "erika@burger.com",
       "state_user": 0,
       "role_id_role": 2
     }
