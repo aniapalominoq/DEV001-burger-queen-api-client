@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Slider = ({ name_product, image_product, price_product }) => {
+  const [count, setCount] = useState(0);
+  const handleIncrease = () => {
+    setCount(count + 1);
+  };
+  const handleDecrease = () => {
+    count <= 0 ? setCount(0) : setCount(count - 1);
+  };
+
   return (
     <div className="is-flex is-justify-content-center is-align-items-center ">
       <div className="control">
@@ -24,17 +32,23 @@ const Slider = ({ name_product, image_product, price_product }) => {
         </div>
         <div className="field has-addons has-addons-centered  px-3 ">
           <div className="control">
-            <button className="button is-primary is-large">
+            <button
+              className="button is-primary is-large"
+              onClick={handleDecrease}
+            >
               <span className="icon is-medium">
                 <i class="fa-solid fa-minus"></i>
               </span>
             </button>
           </div>
           <div className="control">
-            <input type="text" className="input is-large" />
+            <input type="text" className="input is-large" value={count} />
           </div>
           <div className="control">
-            <button className="button is-primary is-large">
+            <button
+              className="button is-primary is-large"
+              onClick={handleIncrease}
+            >
               <span className="icon is-large">
                 <i class="fa-solid fa-plus"></i>
               </span>
