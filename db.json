@@ -207,17 +207,47 @@
     {
       "id_table": 2,
       "number_table": 2,
-      "state_table": 1
+      "state_table": 0
     },
     {
       "id_table": 3,
       "number_table": 3,
-      "state_table": 1
+      "state_table": 0
     },
     {
       "id_table": 4,
       "number_table": 4,
-      "state_table": 1
+      "state_table": 0
+    },
+    {
+      "id_table": 5,
+      "number_table": 5,
+      "state_table": 0
+    },
+    {
+      "id_table": 6,
+      "number_table": 6,
+      "state_table": 0
+    },
+    {
+      "id_table": 7,
+      "number_table": 7,
+      "state_table": 0
+    },
+    {
+      "id_table": 8,
+      "number_table": 8,
+      "state_table": 0
+    },
+    {
+      "id_table": 9,
+      "number_table": 9,
+      "state_table": 0
+    },
+    {
+      "id_table": 10,
+      "number_table": 10,
+      "state_table": 0
     }
   ],
   "users": [

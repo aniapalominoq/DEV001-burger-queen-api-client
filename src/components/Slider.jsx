@@ -21,14 +21,12 @@ const Slider = ({ name_product, image_product, price_product }) => {
 
       <section className=" my-3 mx-3 has-background-primary-light is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
         <figure class="image is-128x128 ">
-          <img src="https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/cafeconleche.png?raw=true" />
+          <img src={image_product} />
         </figure>
 
         <div className="control">
-          <h2 className="title is-5 has-text-centered">
-            ham and cheese sandwich
-          </h2>
-          <h2 className="title is-4 has-text-centered">$ 7.00</h2>
+          <h2 className="title is-5 has-text-centered">{name_product}</h2>
+          <h2 className="title is-4 has-text-centered">${price_product}</h2>
         </div>
         <div className="field has-addons has-addons-centered  px-3 ">
           <div className="control">
