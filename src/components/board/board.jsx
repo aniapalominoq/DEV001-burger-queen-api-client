@@ -7,16 +7,12 @@ import "styled-components";
 const Board = () => {
   const [pedido, setpedido] = useState([]);
   const [selectedRows, setSelectedRows] = useState([]);
-
-  const URL = "http://localhost:5003/orders";
   const showData = async () => {
-    const response = await fetch(URL);
+    const response = await fetch("http://localhost:5000/orders");
     const data = await response.json();
-    console.log(data);
     setpedido(data);
   };
   useEffect(() => {
-    console.log("state", selectedRows);
     showData();
   }, [selectedRows]);
 
