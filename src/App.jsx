@@ -16,12 +16,12 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<PublicRoute />}>
-            <Route index element={<Orders/>} />
+            <Route index element={<Orders />} />
             <Route path={LOGIN} element={<Login />} />
           </Route>
           <Route path={PRIVATE} element={<PrivateRoute />}>
             <Route index element={<WaiterView />} />
-            <Route path={ORDERS} element={<Orders/>}/>
+            <Route path={ORDERS} element={<Orders />} />
             <Route path={LOGOUT} element={<Home />} />
           </Route>
         </Routes>
