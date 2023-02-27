@@ -76,7 +76,7 @@
   "products": [
     {
       "id_product": 1,
-      "name_product": "coffee with milk",
+      "name_product": "Coffee&Milk",
       "price_product": 7.0,
       "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/cafeconleche.png?raw=true",
       "type_product": "",
@@ -85,7 +85,7 @@
     },
     {
       "id_product": 2,
-      "name_product": "american coffee",
+      "name_product": "American Coffee",
       "price_product": 5.0,
       "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/cafeamericano.png?raw=true",
       "type_product": "",
@@ -94,7 +94,7 @@
     },
     {
       "id_product": 3,
-      "name_product": "ham and cheese sandwich",
+      "name_product": "Ham&Cheese Sandwich",
       "price_product": 10.0,
       "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/sanwichjamon.png?raw=true",
       "type_product": "",
@@ -103,16 +103,16 @@
     },
     {
       "id_product": 4,
-      "name_product": "natural fruit juice",
+      "name_product": "Fruit Juice",
       "price_product": 7.0,
-      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/jugonature.png?raw=true",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/order/src/assets/imgMenu/jugo.png?raw=true",
       "type_product": "",
       "dateEntry_product": "0000-00-00",
       "category_product": "breakfast"
     },
     {
       "id_product": 5,
-      "name_product": "plain burger",
+      "name_product": "Plain Burger",
       "price_product": 10.0,
       "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/buuger.png?raw=true",
       "type_product": "burger",
@@ -121,7 +121,7 @@
     },
     {
       "id_product": 6,
-      "name_product": "double burger",
+      "name_product": "Double Burger",
       "price_product": 15.0,
       "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/burf.png?raw=true",
       "type_product": "burger",
@@ -130,7 +130,7 @@
     },
     {
       "id_product": 7,
-      "name_product": "french fries",
+      "name_product": "French Fries",
       "price_product": 5.0,
       "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/papasfritas.png?raw=true",
       "type_product": "accompaniment",
@@ -139,7 +139,7 @@
     },
     {
       "id_product": 8,
-      "name_product": "Onion rings",
+      "name_product": "Onion Rings",
       "price_product": 5.0,
       "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/oninrings.png?raw=true",
       "type_product": "accompaniment",
@@ -148,36 +148,36 @@
     },
     {
       "id_product": 9,
-      "name_product": "water 500ml",
+      "name_product": "Water 500ml",
       "price_product": 5.0,
-      "image_product": "",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/order/src/assets/imgMenu/agua500.png?raw=true",
       "type_product": "drink",
       "dateEntry_product": "2023-02-01",
       "category_product": "lunch dinner"
     },
     {
       "id_product": 10,
-      "name_product": "water 750ml",
+      "name_product": "Water 750ml",
       "price_product": 7.0,
-      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/agua7.png?raw=true",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/order/src/assets/imgMenu/agua700.png?raw=true",
       "type_product": "drink",
       "dateEntry_product": "2023-02-01",
       "category_product": "lunch dinner"
     },
     {
       "id_product": 11,
-      "name_product": "soda 500ml",
+      "name_product": "Soda 500ml",
       "price_product": 7.0,
-      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/gaseosa5.png?raw=true",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/order/src/assets/imgMenu/soda500.png?raw=true",
       "type_product": "drink",
       "dateEntry_product": "2023-02-10",
       "category_product": ""
     },
     {
       "id_product": 12,
-      "name_product": "soda 750ml",
+      "name_product": "Soda 750ml",
       "price_product": 10.0,
-      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/imgMenu/gaseosa7.png?raw=true",
+      "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/order/src/assets/imgMenu/soda700.png?raw=true",
       "type_product": "drink",
       "dateEntry_product": "2023-02-10",
       "category_product": "lunch dinner"
