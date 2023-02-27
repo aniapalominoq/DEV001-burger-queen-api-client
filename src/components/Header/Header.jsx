@@ -6,7 +6,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <nav className="navbar has-background-danger is-flex is-align-content-center is-justify-content-space-between ">
-      <div className="icon-text is-flex is-align-content-center is-justify-content-center px-6 ">
+      <div className="icon-text is-flex is-align-content-center is-justify-content-center px-6  ">
         <span className="icon fa fas-2px  has-text-light">
           <i className="fa-solid fa-burger fas fa-4x"></i>
         </span>

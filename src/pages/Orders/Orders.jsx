@@ -8,9 +8,9 @@ const Orders = () => {
   return (
     <>
       <Header />
-      <hr />
+
       <Slider />
-      <hr />
+
       <Board />
     </>
   );
