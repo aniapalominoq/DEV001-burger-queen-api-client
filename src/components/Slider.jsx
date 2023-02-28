@@ -1,55 +1,59 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Loader from "./Loarder/Loader";
 
+
 const Slider = () => {
-  //const [count, setCount] = useState(1);
+  
   const [arrayProducts, setArrayProducts] = useState([]);
   const [valueFilter, setValueFilter] = useState("breakfast");
+  const [valueButton, setValueButton] = useState();
+  const buttonRef = useRef();
 
-  /*  const handleIncrease = () => {
-    setCount(count + 1);
-  };
-  const handleDecrease = () => {
-    count <= 0 ? setCount(0) : setCount(count - 1);
-  }; */
   useEffect(() => {
     fetch("http://localhost:5000/products")
       .then((res) => res.json())
-      .then((data) => setArrayProducts(data));
-  }, []);
+      .then((data) => {
+       const array = data.filter((product) => {
+          if (product.category_product === valueFilter) {
+            return product;
+          }
+        });
+        setArrayProducts(array)
+      })
+      
+  }, [valueFilter]);
 
-  const filterProducts = (value) => {
-    arrayProducts.filter((product) => {
-      if (product.category_product === value) return product;
-    });
-  };
-  console.log(filterProducts);
+  const handleChange = (value) => {
+   setValueFilter(value)
+
+   };
+const handleButtonClick = () =>{
+ console.log(buttonRef.current.id)
+}
 
   return (
     <>
-      <div className="tabs is-toggle   is-centered is-toggle-rounded is-large mt-4 ">
-        <ul>
-          <li className="is-active">
-            <a>
-              <span className="icon is-small">
-                <i className="fa-solid fa-mug-saucer"></i>
-              </span>
-              <span>Breakfast</span>
-            </a>
-          </li>
-
-          <li>
-            <a>
-              <span className="icon is-small">
-                <i className="fa-solid fa-burger"></i>
-                <i className="fa-solid fa-bottle-droplet"></i>
-              </span>
-              <span>Lunch dinner</span>
-            </a>
-          </li>
-        </ul>
+      <div className="is-flex is-justify-content-center is-align-content-center mt-4">
+      <div className="field has-addons is-large">
+        <div className="control is-toggle">
+          <button onClick={()=>handleChange('breakfast')} className="button is-rounded is-large is-primary is-outlined is-focused">
+            <span className="icon  is-large">
+              <i className="fa-solid fa-mug-saucer"></i>
+            </span>
+            <span className="mx-4">Breakfast</span>
+          </button>
+        </div>
+        <div className="control is-toggle">
+          <button onClick={()=>handleChange('lunch dinner')} className="button  is-rounded is-large  is-primary is-outlined">
+            <span className="icon is-large">
+              <i className="fa-solid fa-burger"></i>
+            </span>
+            <span>Lunch dinner</span>
+          </button>
+        </div>
       </div>
-
+      </div>
+      <hr/>
       <div className="field  is-flex is-flex-wrap-wrap is-justify-content-center is-align-items-center">
         {arrayProducts.length === 0 ? (
           <>
@@ -61,7 +65,7 @@ const Slider = () => {
         ) : (
           arrayProducts.map((product) => (
             <section
-              className=" box  mx-3 has-background-primary-light  is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
+              className="box mx-3 has-background-primary-light  is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
               key={product.id_product}
             >
               <figure className="image is-128x128">
@@ -76,7 +80,7 @@ const Slider = () => {
                 </div>
               </div>
               <div className="control  ">
-                <button className="button is-primary is-normal">
+                <button onClick={handleButtonClick} id={`${product.id_product}`} ref={buttonRef} className="button is-primary is-normal">
                   <span className="icon is-medium">
                     <i className="fa-sharp fa-solid fa-cart-plus"></i>
                   </span>
