@@ -20,36 +20,38 @@ const Slider = () => {
 
   const filterProducts = (value) => {
     arrayProducts.filter((product) => {
-      if (product.category_product === value) return product;
+      if (product.category_product === value) {
+        console.log(product)
+        return setValueFilter(product);
+      }
     });
   };
-  console.log(filterProducts);
+  console.log(filterProducts(valueFilter));
 
   return (
     <>
-      <div className="tabs is-toggle   is-centered is-toggle-rounded is-large mt-4 ">
+      <div className="tabs is-toggle field has-addons is-centered is-toggle-rounded is-large mt-4 ">
         <ul>
-          <li className="is-active">
-            <a>
+          <li className="is-large button-disabled-border-color-is-transparent">
+          <button onClick={filterProducts('breaskfast')} className="button is-transparent is-large is-primary is-outlined disabled-border-color is-transparent">
               <span className="icon is-small">
                 <i className="fa-solid fa-mug-saucer"></i>
               </span>
               <span>Breakfast</span>
-            </a>
+            </button>
           </li>
-
-          <li>
-            <a>
+          <li className="is-large button-disabled-border-color-is-transparent">
+          <button onClick={filterProducts('breaskfast')} className="button is-transparent is-primary is-outlined is-large disabled-border-color is-transparent">
               <span className="icon is-small">
                 <i className="fa-solid fa-burger"></i>
                 <i className="fa-solid fa-bottle-droplet"></i>
               </span>
               <span>Lunch dinner</span>
-            </a>
+            </button>
           </li>
         </ul>
       </div>
-
+      <hr/>
       <div className="field  is-flex is-flex-wrap-wrap is-justify-content-center is-align-items-center">
         {arrayProducts.length === 0 ? (
           <>
