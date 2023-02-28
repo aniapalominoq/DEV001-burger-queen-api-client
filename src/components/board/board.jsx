@@ -7,6 +7,15 @@ import "styled-components";
 const Board = () => {
   const [pedido, setpedido] = useState([]);
   const [selectedRows, setSelectedRows] = useState([]);
+  const [count, setCount] = useState(1);
+
+  const handleIncrease = () => {
+    setCount(count + 1);
+  };
+  const handleDecrease = () => {
+    count <= 0 ? setCount(0) : setCount(count - 1);
+  };
+
   const showData = async () => {
     const response = await fetch("http://localhost:5000/orders");
     const data = await response.json();

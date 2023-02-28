@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Loader from "./Loarder/Loader";
 
+
 const Slider = () => {
-  //const [count, setCount] = useState(1);
+  
   const [arrayProducts, setArrayProducts] = useState([]);
   const [valueFilter, setValueFilter] = useState("breakfast");
+  const [valueButton, setValueButton] = useState();
+  const buttonRef = useRef();
 
-  /*  const handleIncrease = () => {
-    setCount(count + 1);
-  };
-  const handleDecrease = () => {
-    count <= 0 ? setCount(0) : setCount(count - 1);
-  }; */
   useEffect(() => {
     fetch("http://localhost:5000/products")
       .then((res) => res.json())
@@ -30,7 +27,9 @@ const Slider = () => {
    setValueFilter(value)
 
    };
-
+const handleButtonClick = () =>{
+ console.log(buttonRef.current.id)
+}
 
   return (
     <>
@@ -81,7 +80,7 @@ const Slider = () => {
                 </div>
               </div>
               <div className="control  ">
-                <button className="button is-primary is-normal">
+                <button onClick={handleButtonClick} id={`${product.id_product}`} ref={buttonRef} className="button is-primary is-normal">
                   <span className="icon is-medium">
                     <i className="fa-sharp fa-solid fa-cart-plus"></i>
                   </span>
