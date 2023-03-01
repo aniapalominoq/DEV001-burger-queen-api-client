@@ -18,12 +18,7 @@ const columns = [
     sortable: true,
     hide: Media.SM,
   },
-  {
-    name: "Qty",
-    selector: (row) => row.runtime,
-    sortable: true,
-    right: true,
-  },
+
   {
     cell: () => (
       <div className="control">
@@ -35,7 +30,12 @@ const columns = [
       </div>
     ),
   },
-  {},
+  {
+    name: "Qty",
+    selector: (row) => row.runtime,
+    sortable: true,
+    right: true,
+  },
   {
     cell: () => (
       <div className="control">
@@ -50,10 +50,11 @@ const columns = [
   {
     cell: () => (
       <div className="control">
-        <button className="button">
+        <button className="button is-primary">
           <span className="icon is-medium">
             <i className="fa-sharp fa-solid fa-pen-to-square"></i>
           </span>
+          <span>Update</span>
         </button>
       </div>
     ),
@@ -62,10 +63,11 @@ const columns = [
     button: true,
     cell: () => (
       <div className="control">
-        <button className="button">
+        <button className="button is-danger">
           <span className="icon is-medium">
-            <i class="fa-solid fa-trash-can"></i>
+            <i className="fa-solid fa-trash-can"></i>
           </span>
+          <span>Delete</span>
         </button>
       </div>
     ),
@@ -92,18 +94,25 @@ const customStyles = {
     },
   },
 };
+const rowSelectCritera = (row) => row.fat > 6;
 
 const Boards = () => {
   return (
-    <>
+    <div
+      className="m-6
+    "
+    >
       <DataTable
         title="Orders burger queen"
         columns={columns}
         data={arrayOrders}
         customStyles={customStyles}
-        subHeaderAlign={Alignment.Center}
+        subHeaderAlign={Alignment.CENTER}
+        dense
+        selectableRowSelected={rowSelectCritera}
+        pagination
       />
-    </>
+    </div>
   );
 };
 
