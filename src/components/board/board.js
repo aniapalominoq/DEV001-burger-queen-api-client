@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
-import { useState, useEffect } from "react";
-import { Alignment, Media } from "react-data-table-component";
+/* import React from "react";
+import { readLocalStorage } from "../../helpers/helpers";
+
 import DataTable from "react-data-table-component";
 import "styled-components";
 
@@ -16,9 +16,7 @@ const Board = () => {
     count <= 0 ? setCount(0) : setCount(count - 1);
   };
 
-  const showData = async () => {
-    const response = await fetch("http://localhost:5000/orders");
-    const data = await response.json();
+  const showData = () => {
     setpedido(data);
   };
   useEffect(() => {
@@ -35,7 +33,7 @@ const Board = () => {
 
   const columns = [
     {
-      name: "ID",
+      name: "Id",
       selector: (row) => row.id_order,
       grow: 0,
       hide: Media.SM,
@@ -43,13 +41,12 @@ const Board = () => {
     },
     {
       name: "DESCRIPTION",
-      selector: (row) => row.client_id_client,
+      selector: (row) => row.name_product,
       center: true,
     },
     {
-      //aki debemos colocar row. la suma de la cantidad de productos que pidan
-      name: "AMOUNT",
-      selector: (row) => row.order_preci_order,
+      name: "Unit price",
+      selector: (row) => row.price_product,
       center: true,
     },
     {
@@ -105,7 +102,7 @@ const Board = () => {
     <div className="App">
       <DataTable
         columns={columns}
-        data={pedido}
+        data={value}
         title="Orders"
         center="true"
         responsive={true}
@@ -114,10 +111,11 @@ const Board = () => {
         pointerOnHover
         fixedHeaderScrollHeight="true"
         customStyles={customStyles}
-        //  onColumnOrderChange={selectedRows}
+        // onColumnOrderChange={selectedRows}
       />
     </div>
   );
 };
 
 export default Board;
+ */

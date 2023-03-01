@@ -1,67 +1,68 @@
-import React, { useEffect, useRef, useState } from "react";
-import Loader from "./Loarder/Loader";
-
+import React, { useEffect, useState } from "react";
+import Loader from "./Loader/Loader";
 
 const Slider = () => {
-  
   const [arrayProducts, setArrayProducts] = useState([]);
   const [valueFilter, setValueFilter] = useState("breakfast");
-  const [valueButton, setValueButton] = useState();
-  const buttonRef = useRef();
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => {
-       const array = data.filter((product) => {
+        const array = data.filter((product) => {
           if (product.category_product === valueFilter) {
             return product;
           }
         });
-        setArrayProducts(array)
-      })
-      
+        setArrayProducts(array);
+      });
   }, [valueFilter]);
 
-  const handleChange = (value) => {
-   setValueFilter(value)
+  const addButtonClick = (is_id_button) => {
+    console.log("soy el button", is_id_button);
+    const arrayOrderTemp = arrayProducts.filter((product) => {
+      if (product.id_product === is_id_button) return product;
+    });
+    console.log("arrayOrderTemp", arrayOrderTemp);
+    localStorage.setItem(`${is_id_button}`, JSON.stringify(arrayOrderTemp));
+  };
 
-   };
-const handleButtonClick = () =>{
- console.log(buttonRef.current.id)
-}
+  const handleChange = (value) => {
+    setValueFilter(value);
+  };
 
   return (
     <>
       <div className="is-flex is-justify-content-center is-align-content-center mt-4">
-      <div className="field has-addons is-large">
-        <div className="control is-toggle">
-          <button onClick={()=>handleChange('breakfast')} className="button is-rounded is-large is-primary is-outlined is-focused">
-            <span className="icon  is-large">
-              <i className="fa-solid fa-mug-saucer"></i>
-            </span>
-            <span className="mx-4">Breakfast</span>
-          </button>
-        </div>
-        <div className="control is-toggle">
-          <button onClick={()=>handleChange('lunch dinner')} className="button  is-rounded is-large  is-primary is-outlined">
-            <span className="icon is-large">
-              <i className="fa-solid fa-burger"></i>
-            </span>
-            <span>Lunch dinner</span>
-          </button>
+        <div className="field has-addons is-large">
+          <div className="control is-toggle">
+            <button
+              onClick={() => handleChange("breakfast")}
+              className="button is-rounded is-large is-primary is-outlined is-focused"
+            >
+              <span className="icon  is-large">
+                <i className="fa-solid fa-mug-saucer"></i>
+              </span>
+              <span className="mx-4">Breakfast</span>
+            </button>
+          </div>
+          <div className="control is-toggle">
+            <button
+              onClick={() => handleChange("lunch dinner")}
+              className="button  is-rounded is-large  is-primary is-outlined"
+            >
+              <span className="icon is-large">
+                <i className="fa-solid fa-burger"></i>
+              </span>
+              <span>Lunch dinner</span>
+            </button>
+          </div>
         </div>
       </div>
-      </div>
-      <hr/>
+      <hr />
       <div className="field  is-flex is-flex-wrap-wrap is-justify-content-center is-align-items-center">
         {arrayProducts.length === 0 ? (
-          <>
-            <div className="control">
-              <img src="src\assets\loading.gif" alt="loading" />
-              <h1 className="title has-text-centered ">Loading...</h1>
-            </div>
-          </>
+          <Loader />
         ) : (
           arrayProducts.map((product) => (
             <section
@@ -80,7 +81,11 @@ const handleButtonClick = () =>{
                 </div>
               </div>
               <div className="control  ">
-                <button onClick={handleButtonClick} id={`${product.id_product}`} ref={buttonRef} className="button is-primary is-normal">
+                <button
+                  onClick={() => addButtonClick(product.id_product)}
+                  id={`${product.id_product}`}
+                  className="button is-primary is-normal"
+                >
                   <span className="icon is-medium">
                     <i className="fa-sharp fa-solid fa-cart-plus"></i>
                   </span>

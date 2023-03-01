@@ -24,6 +24,8 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // const { fields } = Object.fromEntries(new window.FormData(event.target));
+
     peticion(form.email, form.password);
   };
 
@@ -78,11 +80,9 @@ const Login = () => {
           </div>
         </div>
 
-        <input
-          className="button is-large is-primary"
-          type="submit"
-          value="Sign In"
-        />
+        <button className="button is-large is-primary" type="submit">
+          Sign In
+        </button>
       </form>
 
       {isAuthenticated && <PrivateRoute />}

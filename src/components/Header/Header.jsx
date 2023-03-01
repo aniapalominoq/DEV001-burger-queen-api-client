@@ -4,6 +4,8 @@ import { LOGIN } from "../../config/routes/paths.js"; */
 import "./Header.css";
 
 const Header = () => {
+  const readLocalStorage = JSON.parse(localStorage.getItem("users"));
+
   return (
     <nav className="navbar has-background-danger is-flex is-align-content-center is-justify-content-space-between ">
       <div className="icon-text is-flex is-align-content-center is-justify-content-center px-6  ">
@@ -16,14 +18,18 @@ const Header = () => {
       </div>
 
       <div className=" is-flex p-4 is-align-items-end is-4">
-        <div className="is-flex is-flex-direction-column is-align-items-center is-justify-content-center  ">
-          <img className="avatar" src="src/assets/imgMenu/avatar.png" />
-          <span>
-            <strong className="is-size-6">Erika Duarte</strong>
-          </span>
-          <span className="tag is-warning ">Waiter</span>
-        </div>
-
+        {readLocalStorage ? (
+          <div className="is-flex is-flex-direction-column is-align-items-center is-justify-content-center  ">
+            <img
+              className="avatar"
+              src="https://avatars.githubusercontent.com/u/105249248?v=4"
+            />
+            <span>
+              <strong className="is-size-6">Erika Duarte</strong>
+            </span>
+            <span className="tag is-warning ">Waiter</span>
+          </div>
+        ) : null}
         <div className="dropdown is-right ">
           <div className="dropdown-trigger">
             <button
