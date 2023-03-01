@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Board from "./board/board";
 import Loader from "./Loader/Loader";
 
 const Slider = () => {

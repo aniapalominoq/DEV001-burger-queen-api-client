@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import { readLocalStorage } from "../../helpers/helpers";
 
 import DataTable from "react-data-table-component";
@@ -30,9 +30,6 @@ const Board = () => {
   const handleChange = useCallback((state) => {
     setSelectedRows(state.selectedRows);
   }, []);
-  const handleButtonClick = () => {
-    console.log("clicked");
-  };
 
   const columns = [
     {
@@ -121,3 +118,4 @@ const Board = () => {
 };
 
 export default Board;
+ */

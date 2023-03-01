@@ -3,6 +3,6 @@ export function readLocalStorage() {
   for (let i = 0; i < localStorage.length; i++) {
     arrayOrdersTemp.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
   }
-  console.log(arrayOrdersTemp);
-  return arrayOrdersTemp;
+
+  return arrayOrdersTemp.flat();
 }
