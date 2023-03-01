@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
-import Loader from "./Loarder/Loader";
+import React, { useEffect, useState } from "react";
+import Board from "./board/board";
+import Loader from "./Loader/Loader";
 
 const Slider = () => {
   const [arrayProducts, setArrayProducts] = useState([]);
   const [valueFilter, setValueFilter] = useState("breakfast");
-  const [valueButton, setValueButton] = useState();
-  const buttonRef = useRef();
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -20,11 +19,17 @@ const Slider = () => {
       });
   }, [valueFilter]);
 
+  const addButtonClick = (is_id_button) => {
+    console.log("soy el button", is_id_button);
+    const arrayOrderTemp = arrayProducts.filter((product) => {
+      if (product.id_product === is_id_button) return product;
+    });
+    console.log("arrayOrderTemp", arrayOrderTemp);
+    localStorage.setItem(`${is_id_button}`, JSON.stringify(arrayOrderTemp));
+  };
+
   const handleChange = (value) => {
     setValueFilter(value);
-  };
-  const handleButtonClick = () => {
-    console.log(buttonRef.current.id);
   };
 
   return (
@@ -34,7 +39,7 @@ const Slider = () => {
           <div className="control is-toggle">
             <button
               onClick={() => handleChange("breakfast")}
-              className="button is-rounded is-large is-primary is-outlined "
+              className="button is-rounded is-large is-primary is-outlined is-focused"
             >
               <span className="icon  is-large">
                 <i className="fa-solid fa-mug-saucer"></i>
@@ -58,12 +63,7 @@ const Slider = () => {
       <hr />
       <div className="field  is-flex is-flex-wrap-wrap is-justify-content-center is-align-items-center">
         {arrayProducts.length === 0 ? (
-          <>
-            <div className="control">
-              <img src="src\assets\loading.gif" alt="loading" />
-              <h1 className="title has-text-centered ">Loading...</h1>
-            </div>
-          </>
+          <Loader />
         ) : (
           arrayProducts.map((product) => (
             <section
@@ -83,9 +83,8 @@ const Slider = () => {
               </div>
               <div className="control  ">
                 <button
-                  onClick={handleButtonClick}
+                  onClick={() => addButtonClick(product.id_product)}
                   id={`${product.id_product}`}
-                  ref={buttonRef}
                   className="button is-primary is-normal"
                 >
                   <span className="icon is-medium">

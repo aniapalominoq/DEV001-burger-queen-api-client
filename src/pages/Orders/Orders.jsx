@@ -10,8 +10,6 @@ const Orders = () => {
       <Header />
 
       <Slider />
-
-      <Board />
     </>
   );
 };

@@ -1,11 +1,46 @@
-import React, { useCallback } from "react";
-import { useState, useEffect } from "react";
-import { Alignment, Media } from "react-data-table-component";
+import React from "react";
+
 import DataTable from "react-data-table-component";
 import "styled-components";
 
+for (let i = 0; i < localStorage.length; i++) {
+  console.log(
+    "soy datos de localstorage",
+    localStorage.getItem(localStorage.key(i))
+  );
+}
+
+const columns = [
+  {
+    name: "Title",
+    selector: (row) => row.title,
+    sortable: true,
+  },
+  {
+    name: "Year",
+    selector: (row) => row.year,
+    sortable: true,
+  },
+];
+
+const data = [
+  {
+    id: 1,
+    title: "Beetlejuice",
+    year: "1988",
+  },
+  {
+    id: 2,
+    title: "Ghostbusters",
+    year: "1984",
+  },
+];
+
 const Board = () => {
-  const [pedido, setpedido] = useState([]);
+  const readLocalStorage = JSON.parse(localStorage.getItem("1"));
+  console.log("soy los productos", readLocalStorage);
+
+  /*  const [pedido, setpedido] = useState([]);
   const [selectedRows, setSelectedRows] = useState([]);
   const [count, setCount] = useState(1);
 
@@ -16,9 +51,7 @@ const Board = () => {
     count <= 0 ? setCount(0) : setCount(count - 1);
   };
 
-  const showData = async () => {
-    const response = await fetch("http://localhost:5000/orders");
-    const data = await response.json();
+  const showData = () => {
     setpedido(data);
   };
   useEffect(() => {
@@ -31,11 +64,14 @@ const Board = () => {
 
   const handleChange = useCallback((state) => {
     setSelectedRows(state.selectedRows);
-  }, []);
+  }, []); */
+  /* const handleButtonClick = () => {
+    console.log("clicked");
+  };
 
   const columns = [
     {
-      name: "ID",
+      name: "Id",
       selector: (row) => row.id_order,
       grow: 0,
       hide: Media.SM,
@@ -43,13 +79,13 @@ const Board = () => {
     },
     {
       name: "DESCRIPTION",
-      selector: (row) => row.client_id_client,
+      selector: (row) => row.name_product,
       center: true,
     },
     {
-      //aki debemos colocar row. la suma de la cantidad de productos que pidan
-      name: "AMOUNT",
-      selector: (row) => row.order_preci_order,
+     
+      name: "Unit price",
+      selector: (row) => row.price_product,
       center: true,
     },
     {
@@ -105,7 +141,7 @@ const Board = () => {
     <div className="App">
       <DataTable
         columns={columns}
-        data={pedido}
+        data={value}
         title="Orders"
         center="true"
         responsive={true}
@@ -114,10 +150,11 @@ const Board = () => {
         pointerOnHover
         fixedHeaderScrollHeight="true"
         customStyles={customStyles}
-        //  onColumnOrderChange={selectedRows}
+        // onColumnOrderChange={selectedRows}
       />
     </div>
-  );
+  ); */
+  return <DataTable columns={columns} data={data} />;
 };
 
 export default Board;
