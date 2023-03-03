@@ -1,9 +1,25 @@
 import React, { useEffect, useState } from "react";
+import ItemsOrders from "./ItemsOrders";
 import Loader from "./Loader/Loader";
+
 
 const Slider = () => {
   const [arrayProducts, setArrayProducts] = useState([]);
   const [valueFilter, setValueFilter] = useState("breakfast");
+  const {orderTemp, setOrderTemp} = useState(false)
+ 
+  const getData = ()=>{
+    for (let i = 1; i < localStorage.length; i++) {
+         let datos = localStorage.getItem(localStorage.key(i));
+         console.log(JSON.parse(datos))
+         return JSON.parse(datos)
+        }
+  }
+useEffect(()=>{
+   getData()
+   setOrderTemp(true)
+  
+}, [orderTemp])
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -19,12 +35,10 @@ const Slider = () => {
   }, [valueFilter]);
 
   const addButtonClick = (is_id_button) => {
-    console.log("soy el button", is_id_button);
     const arrayOrderTemp = arrayProducts.filter((product) => {
       if (product.id_product === is_id_button) return product;
     });
-    console.log("arrayOrderTemp", arrayOrderTemp);
-    localStorage.setItem(`${is_id_button}`, JSON.stringify(arrayOrderTemp));
+     localStorage.setItem(`${is_id_button}`, JSON.stringify(arrayOrderTemp));
   };
 
   const handleChange = (value) => {
@@ -38,8 +52,7 @@ const Slider = () => {
           <div className="control is-toggle">
             <button
               onClick={() => handleChange("breakfast")}
-              className="button is-rounded is-large is-primary is-outlined is-focused"
-            >
+              className="button is-rounded is-large is-primary is-outlined is-focused">
               <span className="icon  is-large">
                 <i className="fa-solid fa-mug-saucer"></i>
               </span>
@@ -83,6 +96,7 @@ const Slider = () => {
               <div className="control  ">
                 <button
                   onClick={() => addButtonClick(product.id_product)}
+                  key={product.id}
                   id={`${product.id_product}`}
                   className="button is-primary is-normal"
                 >
@@ -92,7 +106,9 @@ const Slider = () => {
                   <span>add</span>
                 </button>
               </div>
+              {setOrderTemp && <ItemsOrders/>}
             </section>
+            
           ))
         )}
       </div>

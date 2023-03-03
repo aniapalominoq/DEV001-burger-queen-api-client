@@ -10,13 +10,14 @@ import PublicRoute from "./components/router/PublicRoute.jsx";
 import PrivateRoute from "./components/router/PrivateRoute.jsx";
 import Orders from "./pages/Orders/Orders.jsx";
 
+
 function App() {
   return (
     <AuthContextProvider>
       <Router>
         <Routes>
           <Route path="/" element={<PublicRoute />}>
-            <Route index element={<Orders />} />
+            <Route index element={<Home />} />
             <Route path={LOGIN} element={<Login />} />
           </Route>
           <Route path={PRIVATE} element={<PrivateRoute />}>

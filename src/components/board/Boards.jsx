@@ -1,9 +1,8 @@
 import React from "react";
-import { readLocalStorage } from "../../helpers/helpers";
 
 import DataTable, { Alignment, Media } from "react-data-table-component";
 import "styled-components";
-const arrayOrders = readLocalStorage();
+const arrayOrders = [];
 
 const columns = [
   {

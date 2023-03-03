@@ -1,6 +1,6 @@
 import React from "react";
-import Boards from "../../components/board/Boards";
 import Header from "../../components/Header/Header";
+
 
 import Slider from "../../components/Slider";
 
@@ -9,7 +9,8 @@ const Orders = () => {
     <>
       <Header />
       <Slider />
-      <Boards />
+      <hr className="dropdown-divider"/>
+     
     </>
   );
 };

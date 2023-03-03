@@ -1,6 +1,6 @@
 import React from "react";
-/* import { Link } from "react-router-dom";
-import { LOGIN } from "../../config/routes/paths.js"; */
+// import { Link } from "react-router-dom";
+// import { LOGIN } from "../../config/routes/paths.js"; 
 import "./Header.css";
 
 const Header = () => {
@@ -52,7 +52,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/*   <header className="bienvenida" title="header">
+        {/* <header className="bienvenida" title="header">
       <span> Burger Queen</span>
 
       <Link to={LOGIN} role="button">
