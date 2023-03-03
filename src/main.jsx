@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 //import App from "./App";
 import "bulma/css/bulma.min.css";
-import "./index.css";
+import "./styles/index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import WaiterView from "./pages/waiterView/WaiterView";
