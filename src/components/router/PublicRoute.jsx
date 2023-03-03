@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom";
+/* import { Navigate, Outlet } from "react-router-dom";
 import { PRIVATE } from "../../config/routes/paths";
 import { useAuthContext } from "../../Context/authContext";
 
@@ -16,3 +16,4 @@ export default function PublicRoute() {
     </>
   );
 }
+ */

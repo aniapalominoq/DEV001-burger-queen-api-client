@@ -1,13 +1,12 @@
 import "./Login.css";
-
-import PrivateRoute from "../../components/router/PrivateRoute";
-import { useAuthContext } from "../../Context/authContext";
+//import PrivateRoute from "../../components/router/PrivateRoute";
+//import { useAuthContext } from "../../Context/authContext";
 import { useState } from "react";
 
-const { isAuthenticated } = useAuthContext;
+//const {} = useAuthContext;
 
 const Login = () => {
-  const { peticion } = useAuthContext();
+  //const { peticion } = useAuthContext();
   const [form, setForm] = useState("");
   const [viewPasswd, setViewPasswd] = useState("password");
   const handleOnclick = () => {
@@ -26,7 +25,7 @@ const Login = () => {
     event.preventDefault();
     // const { fields } = Object.fromEntries(new window.FormData(event.target));
 
-    peticion(form.email, form.password);
+    // peticion(form.email, form.password);
   };
 
   return (
@@ -85,7 +84,7 @@ const Login = () => {
         </button>
       </form>
 
-      {isAuthenticated && <PrivateRoute />}
+      {/*  {isAuthenticated && <PrivateRoute />} */}
     </section>
   );
 };
