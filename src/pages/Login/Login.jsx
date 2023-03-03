@@ -3,10 +3,10 @@ import style from "./Login.module.css";
 //import { useAuthContext } from "../../Context/authContext";
 import { useState } from "react";
 
-//const {} = useAuthContext;
+//const { isAuthenticated } = useAuthContext;
 
 const Login = () => {
-  //const { peticion } = useAuthContext();
+  // const { peticion } = useAuthContext();
   const [form, setForm] = useState("");
   const [viewPasswd, setViewPasswd] = useState("password");
   const handleOnclick = () => {
@@ -23,9 +23,8 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const { fields } = Object.fromEntries(new window.FormData(event.target));
 
-    // peticion(form.email, form.password);
+    //  peticion(form.email, form.password);
   };
 
   return (
@@ -89,7 +88,7 @@ const Login = () => {
         </button>
       </form>
 
-      {/*  {isAuthenticated && <PrivateRoute />} */}
+      {/* {isAuthenticated && ""} */}
     </section>
   );
 };

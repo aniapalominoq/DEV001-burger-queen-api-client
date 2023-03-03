@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import WaiterView from "./pages/waiterView/WaiterView";
 import Frontend from "./components/Frontend";
+import Orders from "./pages/Orders/Orders";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +19,12 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        index: "/waiter-view",
+        path: "/waiter-view",
         element: <WaiterView />,
+      },
+      {
+        path: "/orders",
+        element: <Orders />,
       },
     ],
   },

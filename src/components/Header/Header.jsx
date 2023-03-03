@@ -1,6 +1,4 @@
 import React from "react";
-/* import { Link } from "react-router-dom";
-import { LOGIN } from "../../config/routes/paths.js"; */
 import style from "./Header.module.css";
 
 const Header = () => {
@@ -50,14 +48,6 @@ const Header = () => {
             </div>
           </div>
         ) : null}
-
-        {/*   <header className="bienvenida" title="header">
-      <span> Burger Queen</span>
-
-      <Link to={LOGIN} role="button">
-        <i className="fa-solid fa-right-to-bracket "></i>
-      </Link>
-    </header> */}
       </nav>
     </header>
   );

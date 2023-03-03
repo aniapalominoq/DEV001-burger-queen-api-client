@@ -1,16 +1,15 @@
 import React from "react";
 import Boards from "../../components/board/Boards";
-import Header from "../../components/Header/Header";
+import style from "./Orders.module.css";
 
 import Slider from "../../components/Slider";
 
 const Orders = () => {
   return (
-    <>
-      <Header />
+    <section className={style.orders}>
       <Slider />
       <Boards />
-    </>
+    </section>
   );
 };
 
