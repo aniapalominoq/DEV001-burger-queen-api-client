@@ -4,14 +4,17 @@ import PrivateRoute from "../../components/router/PrivateRoute";
 import { useAuthContext } from "../../Context/authContext";
 import { useState } from "react";
 
-const { isAuthenticated, loading } = useAuthContext;
+const { isAuthenticated } = useAuthContext;
 
 const Login = () => {
   const { peticion } = useAuthContext();
   const [form, setForm] = useState("");
-  const [viewpass, setViewpass] = useState("password");
-  const handleViewpass = () => {
-    setViewpass("text");
+  const [viewPasswd, setViewPasswd] = useState("password");
+  const handleOnclick = () => {
+    setViewPasswd("text");
+  };
+  const handleOnblur = () => {
+    setViewPasswd("password");
   };
 
   const handleChange = (event) => {
@@ -21,23 +24,23 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // const { fields } = Object.fromEntries(new window.FormData(event.target));
+
     peticion(form.email, form.password);
   };
 
   return (
     <section className="container">
       <form className="box" onSubmit={handleSubmit}>
-        <h1 className="title ">Login</h1>
+        <h1 className="title is-1  has-text-centered">Login</h1>
         <div className="field">
           <label className="label">Email</label>
-          <p className="control has-icons-left has-icons-right">
+          <p className="control has-icons-left">
             <input
               className="input is-large"
               type="email"
-              is-medium
               placeholder="Email"
               name="email"
-              autoComplete
               onChange={handleChange}
               value={form.email}
               required
@@ -49,31 +52,37 @@ const Login = () => {
         </div>
         <div className="field">
           <label className="label">Password</label>
-          <p className="control has-icons-left has-icons-right">
-            <input
-              className="input is-large"
-              type={viewpass}
-              placeholder="Password"
-              name="password"
-              autoComplete
-              onChange={handleChange}
-              value={form.password}
-              required
-            />
-            <span className="icon is-small is-left">
-              <i className="fas fa-lock"></i>
-            </span>
-            <button
-              className="button icon is-small is-right"
-              onClick={handleViewpass}
-            >
-              <i className="fas fa-eye"></i>
-            </button>
-          </p>
+          <div className="field has-addons is-flex">
+            <div className="control has-icons-left is-flex-grow-3">
+              <input
+                className="input is-large"
+                type={viewPasswd}
+                placeholder="Password"
+                name="password"
+                autoComplete
+                onChange={handleChange}
+                value={form.password}
+                required
+              />
+              <span className="icon is-small is-left">
+                <i className="fas fa-lock"></i>
+              </span>
+            </div>
+            <div className="control has-icons-left ">
+              <div
+                className="button is-large has-text-grey-light"
+                onMouseOver={handleOnblur}
+                onClick={handleOnclick}
+              >
+                <i className="fas fa-eye"></i>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="btn-control">
-          <input className="button is-large" type="submit" value="Sign In" />
-        </div>
+
+        <button className="button is-large is-primary" type="submit">
+          Sign In
+        </button>
       </form>
 
       {isAuthenticated && <PrivateRoute />}
