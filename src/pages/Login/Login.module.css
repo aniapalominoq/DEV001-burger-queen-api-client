@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
-
 .container {
-  height: 80vh;
+  height: 78vh;
   display: flex;
   align-items: center;
   justify-content: center;
