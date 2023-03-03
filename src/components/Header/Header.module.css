@@ -1,0 +1,10 @@
+.Header {
+  height: 130px;
+}
+.avatar {
+  border-radius: 50%;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  width: 50px;
+}
