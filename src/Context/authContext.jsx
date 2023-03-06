@@ -14,6 +14,8 @@ export function AuthContextProvider({ children }) {
     localStorage.getItem("users") ?? false
   );
 
+  const [arrayContext, setArrayContext] = useState([]);
+
   const peticion = useCallback(function (email1, password1) {
     fetch("http://localhost:5000/login", {
       method: "POST",
@@ -66,6 +68,8 @@ export function AuthContextProvider({ children }) {
       peticion,
       logout,
       isAuthenticated,
+      arrayContext, 
+      setArrayContext
     }),
     [peticion, logout, isAuthenticated, setIsAuthenticated]
   );

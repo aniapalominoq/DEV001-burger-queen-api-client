@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useAuthContext } from "../Context/authContext";
+
+
 import Loader from "./Loader/Loader";
 
+
 const Slider = () => {
-  const [arrayProducts, setArrayProducts] = useState([]);
+  const [listProducts, setListProducts] = useState([]);
   const [valueFilter, setValueFilter] = useState("breakfast");
+  const {arrayContext, setArrayContext} = useAuthContext();
+
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -14,17 +20,15 @@ const Slider = () => {
             return product;
           }
         });
-        setArrayProducts(array);
+        setListProducts(array);
       });
   }, [valueFilter]);
 
   const addButtonClick = (is_id_button) => {
-    console.log("soy el button", is_id_button);
-    const arrayOrderTemp = arrayProducts.filter((product) => {
+    const arrayOrderTemp = listProducts.filter((product) => {
       if (product.id_product === is_id_button) return product;
     });
-    console.log("arrayOrderTemp", arrayOrderTemp);
-    localStorage.setItem(`${is_id_button}`, JSON.stringify(arrayOrderTemp));
+    setArrayContext(arrayContext.concat(arrayOrderTemp))
   };
 
   const handleChange = (value) => {
@@ -61,10 +65,10 @@ const Slider = () => {
       </div>
       <hr />
       <div className="field  is-flex is-flex-wrap-wrap is-justify-content-center is-align-items-center">
-        {arrayProducts.length === 0 ? (
+        {listProducts.length === 0 ? (
           <Loader />
         ) : (
-          arrayProducts.map((product) => (
+          listProducts.map((product) => (
             <section
               className="box mx-3 has-background-primary-light  is-flex is-flex-direction-column is-justify-content-center is-align-items-center"
               key={product.id_product}
@@ -92,6 +96,7 @@ const Slider = () => {
                   <span>add</span>
                 </button>
               </div>
+             
             </section>
           ))
         )}

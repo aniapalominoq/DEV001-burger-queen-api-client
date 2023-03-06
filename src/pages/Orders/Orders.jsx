@@ -1,15 +1,14 @@
 import React from "react";
-import Boards from "../../components/board/Boards";
 import Header from "../../components/Header/Header";
-
 import Slider from "../../components/Slider";
+import Table from "../../components/Table";
 
 const Orders = () => {
   return (
     <>
       <Header />
       <Slider />
-      <Boards />
+      <Table/>
     </>
   );
 };
