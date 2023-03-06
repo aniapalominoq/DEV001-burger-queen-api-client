@@ -62,7 +62,6 @@ const Login = () => {
                 type={viewPasswd}
                 placeholder="Password"
                 name="password"
-                autoComplete
                 onChange={handleChange}
                 value={form.password}
                 required
@@ -87,8 +86,6 @@ const Login = () => {
           Sign In
         </button>
       </form>
-
-      {/* {isAuthenticated && ""} */}
     </section>
   );
 };
