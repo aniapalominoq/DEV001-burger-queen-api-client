@@ -15,6 +15,8 @@ export function AuthContextProvider({ children }) {
   );
 
   const [arrayContext, setArrayContext] = useState([]);
+  const [getUser, setGetUser] = useState([]);
+
 
   const peticion = useCallback(function (email1, password1) {
     fetch("http://localhost:5000/login", {
@@ -34,7 +36,8 @@ export function AuthContextProvider({ children }) {
         localStorage.setItem("users", JSON.stringify(data));
         data.accessToken ? setIsAuthenticated(true) : setIsAuthenticated(false);
         const readLocalStorage = JSON.parse(localStorage.getItem("users"));
-
+        setGetUser(getUser.concat(readLocalStorage))
+        console.log('USUARIOS', getUser)
         if (readLocalStorage === "Cannot find user")
           //return alert("Cannot find user");
           return Swal.fire({
