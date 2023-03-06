@@ -1,7 +1,7 @@
 import React from "react";
-/* import { Link } from "react-router-dom";
-import { LOGIN } from "../../config/routes/paths.js"; */
-import "./Header.css";
+import { Link } from "react-router-dom";
+import { LOGIN } from "../../config/routes/paths.js";
+import style from "./Header.module.css";
 
 const Header = () => {
   const readLocalStorage = JSON.parse(localStorage.getItem("users"));
@@ -21,16 +21,20 @@ const Header = () => {
         {readLocalStorage ? (
           <div className="is-flex is-flex-direction-column is-align-items-center is-justify-content-center  ">
             <img
-              className="avatar"
+              className={style.avatar}
               src="https://avatars.githubusercontent.com/u/105249248?v=4"
             />
             <span>
-              <strong className="is-size-6">Erika Duarte</strong>
+              <strong className="is-size-6">
+                {/* {readLocalStorage.users.name} */}
+              </strong>
             </span>
-            <span className="tag is-warning ">Waiter</span>
+            <span className="tag is-warning ">
+              {/* {readLocalStorage.users.role} */}
+            </span>
           </div>
         ) : null}
-        <div className="dropdown is-right ">
+        <div className="dropdown is-right is-active">
           <div className="dropdown-trigger">
             <button
               className="button is-large is-danger"
@@ -45,20 +49,13 @@ const Header = () => {
           <div className="dropdown-menu" id="dropdown-menu2" role="menu">
             <div className="dropdown-content">
               <div className="dropdown-item">
-                <strong>Logout</strong>
+                <Link to={LOGIN} role="button">Login
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/*   <header className="bienvenida" title="header">
-      <span> Burger Queen</span>
-
-      <Link to={LOGIN} role="button">
-        <i className="fa-solid fa-right-to-bracket "></i>
-      </Link>
-    </header> */}
     </nav>
   );
 };
