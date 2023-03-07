@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header className={style.Header}>
-      <nav className=" navbar has-background-danger is-flex is-align-content-center is-justify-content-space-between  ">
+      <nav className={style.Nav}>
         <div className="icon-text is-flex is-align-content-center is-justify-content-center px-6  ">
           <span className="icon fa fas-2px  has-text-light">
             <i className="fa-solid fa-burger fas fa-4x"></i>
@@ -45,7 +45,9 @@ const Header = () => {
               <div className="dropdown-menu" id="dropdown-menu2" role="menu">
                 <div className="dropdown-content">
                   <div className="dropdown-item">
-                    <strong>{<Logout />}</strong>
+                    <hr className="dropdown-divider" />
+                    <a className="dropdown-item">{<Logout />}</a>
+                    <hr className="dropdown-divider" />
                   </div>
                 </div>
               </div>
