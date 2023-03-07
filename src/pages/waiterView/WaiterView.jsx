@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Loader from "../../components/Loader/Loader";
-
-import Logout from "../../components/Logout/Logout";
 import style from "./WaiterView.module.css";
 
 const WaiterView = () => {
@@ -16,9 +14,8 @@ const WaiterView = () => {
   }, []);
 
   return (
-    <>
-      <h1 className="title is-1 has-text-centered">Tables</h1>
-
+    <section className={style.container}>
+      <h1 className="title is-3 has-text-centered pt-4">Tables</h1>
       <div className="field is-flex  is-flex-wrap-wrap is-justify-content-center  is-align-content-space-evenly">
         {arrayTables.length === 0 ? (
           <Loader />
@@ -26,21 +23,24 @@ const WaiterView = () => {
           arrayTables.map((elem) => (
             <Link
               to="/waiterView/orders"
-              className="box m-4  has-background-light is-flex is-flex-direction-column is-justify-content-center"
+              className="box m-6 p-4  has-background-success-light is-flex is-flex-direction-column is-justify-content-center"
               key={elem.id_table}
             >
               <span className="field is-flex is-flex-direction-column is-justify-content-center is-align-content-center">
-                <figure className="image is-128x128 is-flex is-justify-content-center ">
-                  <img src="https://img.icons8.com/ios-filled/250/restaurant-table.png" />
-                </figure>
+                <img
+                  className={style.img}
+                  src="https://img.icons8.com/ios-filled/250/restaurant-table.png"
+                />
 
-                <span className="title is-4">Table N° {elem.number_table}</span>
+                <span className="title is-2 has-text-centered ">
+                  N° {elem.number_table}
+                </span>
               </span>
             </Link>
           ))
         )}
       </div>
-    </>
+    </section>
   );
 };
 
