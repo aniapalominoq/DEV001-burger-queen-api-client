@@ -1,0 +1,28 @@
+.container {
+  height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.container > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-end;
+  margin-bottom: 3.5vh;
+}
+.img {
+  opacity: 0.6;
+  height: 94%;
+}
+.form {
+  background-color: #fff;
+  position: absolute;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  padding: 25px;
+  border-radius: 20px;
+}

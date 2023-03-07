@@ -1,5 +1,4 @@
-import "./Login.css";
-
+import style from "./Login.module.css";
 import PrivateRoute from "../../components/router/PrivateRoute";
 import { useAuthContext } from "../../Context/authContext";
 import { useState } from "react";
@@ -24,14 +23,18 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const { fields } = Object.fromEntries(new window.FormData(event.target));
 
     peticion(form.email, form.password);
   };
 
   return (
-    <section className="container">
-      <form className="box" onSubmit={handleSubmit}>
+    <section className={style.container}>
+      <img
+        className={style.img}
+        src="https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/main/src/assets/hamburger.png?raw=true"
+        alt="burger"
+      />
+      <form className={style.form} onSubmit={handleSubmit}>
         <h1 className="title is-1  has-text-centered">Login</h1>
         <div className="field">
           <label className="label">Email</label>
@@ -59,7 +62,6 @@ const Login = () => {
                 type={viewPasswd}
                 placeholder="Password"
                 name="password"
-                autoComplete
                 onChange={handleChange}
                 value={form.password}
                 required
