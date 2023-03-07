@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../../components/Header/Header";
+
 import Loader from "../../components/Loader/Loader";
 
 import Logout from "../../components/Logout/Logout";
-import "./WaiterView.css";
+import style from "./WaiterView.module.css";
 
 const WaiterView = () => {
   const dateUser = JSON.parse(localStorage.getItem("users"));
@@ -17,7 +17,6 @@ const WaiterView = () => {
 
   return (
     <>
-      <Header />
       <h1 className="title is-1 has-text-centered">Tables</h1>
 
       <div className="field is-flex  is-flex-wrap-wrap is-justify-content-center  is-align-content-space-evenly">
@@ -35,10 +34,7 @@ const WaiterView = () => {
                   <img src="https://img.icons8.com/ios-filled/250/restaurant-table.png" />
                 </figure>
 
-                <span className="title is-4">
-                  {" "}
-                  Table N° {elem.number_table}
-                </span>
+                <span className="title is-4">Table N° {elem.number_table}</span>
               </span>
             </Link>
           ))

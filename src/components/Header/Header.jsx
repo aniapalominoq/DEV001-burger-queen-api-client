@@ -1,4 +1,5 @@
 import React from "react";
+import Logout from "../Logout/Logout";
 import style from "./Header.module.css";
 
 const Header = () => {
@@ -6,7 +7,7 @@ const Header = () => {
 
   return (
     <header className={style.Header}>
-      <nav className=" navbar has-background-danger is-flex is-align-content-center is-justify-content-space-between p-6 ">
+      <nav className=" navbar has-background-danger is-flex is-align-content-center is-justify-content-space-between  ">
         <div className="icon-text is-flex is-align-content-center is-justify-content-center px-6  ">
           <span className="icon fa fas-2px  has-text-light">
             <i className="fa-solid fa-burger fas fa-4x"></i>
@@ -18,7 +19,10 @@ const Header = () => {
         {readLocalStorage ? (
           <div className=" is-flex p-4 is-align-items-end is-4">
             <div className="is-flex is-flex-direction-column is-align-items-center is-justify-content-center  ">
-              <img className="avatar" src={readLocalStorage.user.image_user} />
+              <img
+                className={style.avatar}
+                src={readLocalStorage.user.image_user}
+              />
               <span>
                 <strong className="is-size-6">
                   {readLocalStorage.user.name_user}
@@ -26,7 +30,7 @@ const Header = () => {
               </span>
               <span className="tag has-background-warning ">Waiter</span>
             </div>
-            <div className="dropdown is-right ">
+            <div className="dropdown is-right  is-active">
               <div className="dropdown-trigger">
                 <button
                   className="button is-large is-danger"
@@ -41,7 +45,7 @@ const Header = () => {
               <div className="dropdown-menu" id="dropdown-menu2" role="menu">
                 <div className="dropdown-content">
                   <div className="dropdown-item">
-                    <strong>Logout</strong>
+                    <strong>{<Logout />}</strong>
                   </div>
                 </div>
               </div>
