@@ -24,13 +24,16 @@ const Slider = () => {
 
   const addButtonClick = (is_id_button) => {
     setFocus("is-active");
+
     const arrayOrderTemp = listProducts.filter((product) => {
       if (product.id_product === is_id_button) return product;
     });
+
     const productNew = arrayOrderTemp.map((item) => ({
       ...item,
       qty: 1,
     }));
+
     setArrayContext([...arrayContext, productNew].flat());
   };
 

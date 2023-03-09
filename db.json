@@ -159,6 +159,7 @@
       "id_product": 10,
       "name_product": "Water 750ml",
       "price_product": 7.0,
+
       "image_product": "https://github.com/aniapalominoq/DEV001-burger-queen-api-client/blob/order/src/assets/imgMenu/agua700.png?raw=true",
       "type_product": "drink",
       "dateEntry_product": "2023-02-01",
