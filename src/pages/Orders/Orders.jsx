@@ -64,6 +64,9 @@ const Orders = () => {
     });
   };
 
+  const arraySubTotals = arrayContext.map((el) => el.price_product * el.qty);
+  const total = arraySubTotals.reduce((a, b) => a + b, 0);
+
   return (
     <>
       <Slider />
@@ -173,7 +176,7 @@ const Orders = () => {
             </div>
             <div className="panel-block is-justify-content-space-evenly is-align-items-center">
               <span className="title is-size-4 mt-4">Total amount</span>
-              <span className="is-size-4">$.234</span>
+              <span className="is-size-4"> {` $ ${total}.00`}</span>
             </div>
             <div className="panel-block is-flex ">
               <button className="button is-primary is-normal is-outlined is-fullwidth">
