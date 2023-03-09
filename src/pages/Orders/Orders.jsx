@@ -171,7 +171,11 @@ const Orders = () => {
                 </tbody>
               </table>
             </div>
-            <div className="panel-block">
+            <div className="panel-block is-justify-content-space-evenly is-align-items-center">
+              <span className="title is-size-4 mt-4">Total amount</span>
+              <span className="is-size-4">$.234</span>
+            </div>
+            <div className="panel-block is-flex ">
               <button className="button is-primary is-normal is-outlined is-fullwidth">
                 Send order
               </button>
