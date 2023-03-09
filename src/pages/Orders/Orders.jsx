@@ -3,8 +3,6 @@ import { useAuthContext } from "../../Context/authContext";
 import Slider from "../../components/Slider";
 import Swal from "sweetalert2";
 
-//import Table from "../../components/Table";
-
 const Orders = () => {
   const { arrayContext, setArrayContext } = useAuthContext();
   console.log(arrayContext);
@@ -76,13 +74,13 @@ const Orders = () => {
           <div className="field mx-4">
             <label className="label">N° Table</label>
             <div className="control ">
-              <input className="input " type="text" value="1" />
+              <input className="input " type="text" defaultValue="" />
             </div>
           </div>
           <div className="field mx-4">
             <label className="label">Client name</label>
             <div className="control has-icons-left">
-              <input className="input " type="text" value="bulma" />
+              <input className="input " type="text" defaultValue="" />
               <span className="icon is-small is-left">
                 <i className="fas fa-user"></i>
               </span>
@@ -91,9 +89,9 @@ const Orders = () => {
           <div className="field mx-4">
             <label className="label">National Identity Number</label>
             <div className="control has-icons-left ">
-              <input className="input " type="text" value="12345678" />
+              <input className="input " type="text" defaultValue="" />
               <span className="icon is-small is-left">
-                <i class="fa-sharp fa-regular fa-address-card"></i>
+                <i className="fa-sharp fa-regular fa-address-card"></i>
               </span>
             </div>
           </div>
