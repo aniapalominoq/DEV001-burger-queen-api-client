@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useAuthContext } from "../Context/authContext";
-import { useState } from "react";
 
 const Table = () => {
+  const tdRef = useRef();
+  const buttonRefPlus = useRef();
+  const buttonRefMinus = useRef();
   const { arrayContext, setArrayContext } = useAuthContext();
-  const [count, setCount] = useState(0);
-  console.log(arrayContext);
 
-  const counter = () => {
-    setCount(count + 1);
+  const [count, setCount] = useState(1);
+
+  const counterPlus = (value) => {
+    console.log(tdRef.current);
+
+    console.log("*************", valueTd, valueButtonPlus, value);
+    if (valueTd === value) {
+      setCount(count + 1);
+    }
   };
   return (
     <>
@@ -20,7 +27,6 @@ const Table = () => {
           <h2>TABLE:</h2>
         </div>
         <div className="column is-offset-x">
-          {" "}
           <input
             className="input is-primary is-one-quarter is-medium"
             type="text"
@@ -52,30 +58,40 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {arrayContext.map((element, index) => (
+          {arrayContext.map((el, index) => (
             <>
-              <tr key={element.id_product}>
+              <tr key={index}>
                 <th>{index + 1}</th>
-                <td>{element.name_product}</td>
-                <td>$ {element.price_product}</td>
+                <td>{el.name_product}</td>
+                <td>$ {el.price_product}</td>
                 <td>
                   <button
-                    className="button is-primary is-normal"
-                    onClick={() => setCount(count - 1)}
+                    id={`${el.id_product * 10}`}
+                    ref={buttonRefMinus}
+                    className="button is-medium is-primary "
+                    onClick={() => setCount(count <= 1 ? 1 : count - 1)}
                   >
-                    -
+                    <span className="icon is-medium">
+                      <i className="fa-solid fa-minus"></i>
+                    </span>
                   </button>
                 </td>
-                <td itemID={index}>{count}</td>
+                <td id={`${el.id_product * 20}`} ref={tdRef}>
+                  {count}
+                </td>
                 <td>
                   <button
-                    className="button is-primary is-normal"
-                    onClick={() => setCount(count + 1)}
+                    id={`${el.id_product}`}
+                    ref={buttonRefPlus}
+                    className="button is-primary is-medium"
+                    onClick={() => counterPlus(el.id_product)}
                   >
-                    +
+                    <span className="icon is-medium">
+                      <i className="fa-solid fa-plus"></i>
+                    </span>
                   </button>
                 </td>
-                <td> ${element.price_product + element.price_product}</td>
+                <td> ${el.price_product}</td>
                 <td>
                   <button className="button is-primary is-normal">
                     DELETE
