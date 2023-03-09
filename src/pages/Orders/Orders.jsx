@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const Orders = () => {
   const { arrayContext, setArrayContext } = useAuthContext();
-  console.log(arrayContext);
+  console.log("******inico******", arrayContext, "*******fin******");
 
   const increaseProduct = (productOrder) => {
     if (arrayContext.find((el) => el.id_product === productOrder.id_product)) {
@@ -67,6 +67,31 @@ const Orders = () => {
   const arraySubTotals = arrayContext.map((el) => el.price_product * el.qty);
   const total = arraySubTotals.reduce((a, b) => a + b, 0);
 
+  //renderizar valores unicos
+
+  const miCarritoSinDuplicados = arrayContext.reduce(
+    (acumulador, valorActual) => {
+      const elementoYaExiste = acumulador.find(
+        (elemento) => elemento.id_product === valorActual.id_product
+      );
+      if (elementoYaExiste) {
+        return acumulador.map((elemento) => {
+          if (elemento.id_product === valorActual.id_product) {
+            return {
+              ...elemento,
+              qty: elemento.qty + valorActual.qty,
+            };
+          }
+
+          return elemento;
+        });
+      }
+
+      return [...acumulador, valorActual];
+    },
+    []
+  );
+
   return (
     <>
       <Slider />
@@ -126,7 +151,7 @@ const Orders = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {arrayContext.map((productOrder, index) => (
+                  {miCarritoSinDuplicados.map((productOrder, index) => (
                     <>
                       <tr key={index}>
                         <th>{index + 1}</th>
